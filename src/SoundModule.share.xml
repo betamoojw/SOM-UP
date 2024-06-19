@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="../../Organization/knxprod-support/knx_project_14/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
-<KNX xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" xmlns="http://knx.org/xml/project/14" CreatedBy="KNX MT" ToolVersion="5.1.255.16695">
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" xmlns="http://knx.org/xml/project/20" CreatedBy="KNX MT" ToolVersion="5.1.255.16695">
   <ManufacturerData>
     <Manufacturer>
       <ApplicationPrograms>
         <ApplicationProgram>
+          <op:part name="TG" href="SoundModule.TG.part.xml" instances="9">
+            <op:param name="%ParamOffset%" value="85" increment="31" />
+            <op:param name="%Seq2%" value="1" digits="2" increment="1" />
+            <op:param name="%Seq1%" value="1" digits="1" increment="1" />
+          </op:part>
           <Static>
             <ParameterTypes>
               <ParameterType Id="%AID%_PT-SOMRepeats" Name="SOMRepeats">
@@ -96,6 +101,19 @@
                   <Enumeration Text="Auslöser 8" Value="7" Id="%ENID%" />
                   <Enumeration Text="Auslöser 9" Value="8" Id="%ENID%" />
                   <Enumeration Text="Auslöser 10" Value="9" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="%AID%_PT-TGDuration" Name="TGDuration">
+                <TypeNumber SizeInBit="8" Type="unsignedInt" minInclusive="0" maxInclusive="250" />
+              </ParameterType>
+              <ParameterType Id="%AID%_PT-TGFrequenz" Name="TGFrequenz">
+                <TypeNumber SizeInBit="16" Type="unsignedInt" minInclusive="0" maxInclusive="8000" />
+              </ParameterType>
+              <ParameterType Id="%AID%_PT-TGMode" Name="TGMode">
+                <TypeRestriction Base="Value" SizeInBit="2">
+                  <Enumeration Text="Deaktiviert" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Einfach" Value="1" Id="%ENID%" />
+                  <Enumeration Text="Komplex" Value="2" Id="%ENID%" />
                 </TypeRestriction>
               </ParameterType>
             </ParameterTypes>
@@ -193,7 +211,7 @@
                 <Parameter Id="%AID%_UP-%TT%00178" Name="SceneTargetB18" Offset="58" BitOffset="0" ParameterType="%AID%_PT-SceneTargetB" Text="SceneTargetB8" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%00179" Name="SceneTargetB19" Offset="59" BitOffset="0" ParameterType="%AID%_PT-SceneTargetB" Text="SceneTargetB9" Value="0" />
               </Union>
-
+              <op:usePart name="TG" xpath="//Static/Parameters/*" />
             </Parameters>
             <ParameterRefs>
               <ParameterRef Id="%AID%_P-%TT%00001_R-%TT%0000101" RefId="%AID%_P-%TT%00001" />
@@ -284,6 +302,7 @@
               <ParameterRef Id="%AID%_UP-%TT%00177_R-%TT%0017701" RefId="%AID%_UP-%TT%00177" />
               <ParameterRef Id="%AID%_UP-%TT%00178_R-%TT%0017801" RefId="%AID%_UP-%TT%00178" />
               <ParameterRef Id="%AID%_UP-%TT%00179_R-%TT%0017901" RefId="%AID%_UP-%TT%00179" />
+              <op:usePart name="TG" xpath="//Static/ParameterRefs/*" />
             </ParameterRefs>
             <ComObjectTable>
               <ComObject Id="%AID%_O-%TT%00021" Name="Status" Text="Zentral" Number="20" FunctionText="Status" ObjectSize="1 Bit" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-11" />
@@ -707,7 +726,7 @@
                   <ParameterBlock Id="%AID%_PB-nnn" Name="ToneGenerator" Text="Tongenerator" Icon="waveform" HelpContext="Empty">
                     <ParameterSeparator Id="%AID%_PS-nnn" Text="Tongenerator" UIHint="Headline" />
                     <ParameterSeparator Id="%AID%_PS-nnn" Text="Die Sequenzen können über die Pseudo-Datei 10001 bis 10009 angesprochen werden." />
-                    <op:include href="ToneGenerator.templ.xml" xpath="//Dynamic/ChannelIndependentBlock/*" type="template" prefix="TONE" IsInner="true" />
+                    <op:usePart name="TG" xpath="//Dynamic/ChannelIndependentBlock/ParameterBlock" />
                   </ParameterBlock>
                 </when>
               </choose>

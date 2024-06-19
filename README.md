@@ -5,9 +5,13 @@ Das OpenKNX SOM-UP ist ein KNX-MP3-Player mit integriertem Verstärker zum direk
 Die Platine wurde klein und rund gehalten, so dass diese mit Nylon M2-Abstanshalter z.B. direkt auf einen Gira-Lautsprecher geklebt werden kann und somit in eine tiefe Unterputzdose passt. Die Stromversorgung erfolgt dabei komplett aus dem KNX-Bus. Hierdurch ist aber die maximale Lautstärke limitiert (abhängig von der Sounddatei und dem verwendeten Lautsprecher).
 
 ## Features
-- MP3-Player (DY-SV17F)
+- Variante: MP3-Player (DY-SV17F)
 	- 4MB großer Speicher, welcher per USB befüllt wird. (Wird als USB-Stick angesprochen)
 	- Onboard 5W Class D Verstärker (ca 3~5W an 4Ω Lautsprecher)
+- Variante: Software-Player (I2S)
+    - Verwendung des internen Flashspeichers ca 10MB frei zur Nutzung
+    - Tongenerator bis 9 Tonsequenzen
+    - Support MP3-, WAV-, RTT-Dateien
 - Grundlautstärke (auch Tag/Nachtabhängig)
 - Globale Sperrmöglichkeit
 - 20 konfigurierbare Szenen
@@ -21,9 +25,9 @@ Die Platine wurde klein und rund gehalten, so dass diese mit Nylon M2-Abstanshal
 - 4 gepulste Binäreingäng
 	- Entprell-Möglichkeit
 	- Zyklisches Senden (z.B. für Verschlusskontakte)
-	- Direkte Nutzung im VIrtualButton-Modul
+	- Direkte Nutzung im VirtualButton-Modul
 - 20 Kanäle des [VirtualButton-Modul](https://knx-user-forum.de/forum/projektforen/openknx/1841539-firmware-openknx-virtualbutton-release-vbm)
-- 30 Kanäle des [Logik-Modul](https://knx-user-forum.de/forum/projektforen/openknx/1765082-openknx-logikmodul-release)
+- 99 Kanäle des [Logik-Modul](https://knx-user-forum.de/forum/projektforen/openknx/1765082-openknx-logikmodul-release)
 
 ## Installation
 

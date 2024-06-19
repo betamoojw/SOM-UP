@@ -10,8 +10,8 @@
                                              
 #define MAIN_OpenKnxId 0xA2
 #define MAIN_ApplicationNumber 41
-#define MAIN_ApplicationVersion 61
-#define MAIN_ParameterSize 9889
+#define MAIN_ApplicationVersion 68
+#define MAIN_ParameterSize 12309
 #define MAIN_MaxKoNumber 639
 #define MAIN_OrderNumber "SOM-UP"
 #define BASE_ModuleVersion 17
@@ -241,6 +241,213 @@
 #define SOM_SceneTargetB17                      108      // 8 Bits, Bit 7-0
 #define SOM_SceneTargetB18                      109      // 8 Bits, Bit 7-0
 #define SOM_SceneTargetB19                      110      // 8 Bits, Bit 7-0
+#define SOM_TG1Mode                             131      // 2 Bits, Bit 7-6
+#define     SOM_TG1ModeMask 0xC0
+#define     SOM_TG1ModeShift 6
+#define SOM_TG1Repeats                          132      // uint8_t
+#define SOM_TG1RepeatPause                      133      // uint8_t
+#define SOM_TG1Duration1                        135      // uint8_t
+#define SOM_TG1Duration2                        136      // uint8_t
+#define SOM_TG1Duration3                        137      // uint8_t
+#define SOM_TG1Duration4                        138      // uint8_t
+#define SOM_TG1Duration5                        139      // uint8_t
+#define SOM_TG1Duration6                        140      // uint8_t
+#define SOM_TG1Duration7                        141      // uint8_t
+#define SOM_TG1Duration8                        142      // uint8_t
+#define SOM_TG1Duration9                        143      // uint8_t
+#define SOM_TG1Frequency1                       144      // uint16_t
+#define SOM_TG1Frequency2                       146      // uint16_t
+#define SOM_TG1Frequency3                       148      // uint16_t
+#define SOM_TG1Frequency4                       150      // uint16_t
+#define SOM_TG1Frequency5                       152      // uint16_t
+#define SOM_TG1Frequency6                       154      // uint16_t
+#define SOM_TG1Frequency7                       156      // uint16_t
+#define SOM_TG1Frequency8                       158      // uint16_t
+#define SOM_TG1Frequency9                       160      // uint16_t
+#define SOM_TG2Mode                             162      // 2 Bits, Bit 7-6
+#define     SOM_TG2ModeMask 0xC0
+#define     SOM_TG2ModeShift 6
+#define SOM_TG2Repeats                          163      // uint8_t
+#define SOM_TG2RepeatPause                      164      // uint8_t
+#define SOM_TG2Duration1                        166      // uint8_t
+#define SOM_TG2Duration2                        167      // uint8_t
+#define SOM_TG2Duration3                        168      // uint8_t
+#define SOM_TG2Duration4                        169      // uint8_t
+#define SOM_TG2Duration5                        170      // uint8_t
+#define SOM_TG2Duration6                        171      // uint8_t
+#define SOM_TG2Duration7                        172      // uint8_t
+#define SOM_TG2Duration8                        173      // uint8_t
+#define SOM_TG2Duration9                        174      // uint8_t
+#define SOM_TG2Frequency1                       175      // uint16_t
+#define SOM_TG2Frequency2                       177      // uint16_t
+#define SOM_TG2Frequency3                       179      // uint16_t
+#define SOM_TG2Frequency4                       181      // uint16_t
+#define SOM_TG2Frequency5                       183      // uint16_t
+#define SOM_TG2Frequency6                       185      // uint16_t
+#define SOM_TG2Frequency7                       187      // uint16_t
+#define SOM_TG2Frequency8                       189      // uint16_t
+#define SOM_TG2Frequency9                       191      // uint16_t
+#define SOM_TG3Mode                             193      // 2 Bits, Bit 7-6
+#define     SOM_TG3ModeMask 0xC0
+#define     SOM_TG3ModeShift 6
+#define SOM_TG3Repeats                          194      // uint8_t
+#define SOM_TG3RepeatPause                      195      // uint8_t
+#define SOM_TG3Duration1                        197      // uint8_t
+#define SOM_TG3Duration2                        198      // uint8_t
+#define SOM_TG3Duration3                        199      // uint8_t
+#define SOM_TG3Duration4                        200      // uint8_t
+#define SOM_TG3Duration5                        201      // uint8_t
+#define SOM_TG3Duration6                        202      // uint8_t
+#define SOM_TG3Duration7                        203      // uint8_t
+#define SOM_TG3Duration8                        204      // uint8_t
+#define SOM_TG3Duration9                        205      // uint8_t
+#define SOM_TG3Frequency1                       206      // uint16_t
+#define SOM_TG3Frequency2                       208      // uint16_t
+#define SOM_TG3Frequency3                       210      // uint16_t
+#define SOM_TG3Frequency4                       212      // uint16_t
+#define SOM_TG3Frequency5                       214      // uint16_t
+#define SOM_TG3Frequency6                       216      // uint16_t
+#define SOM_TG3Frequency7                       218      // uint16_t
+#define SOM_TG3Frequency8                       220      // uint16_t
+#define SOM_TG3Frequency9                       222      // uint16_t
+#define SOM_TG4Mode                             224      // 2 Bits, Bit 7-6
+#define     SOM_TG4ModeMask 0xC0
+#define     SOM_TG4ModeShift 6
+#define SOM_TG4Repeats                          225      // uint8_t
+#define SOM_TG4RepeatPause                      226      // uint8_t
+#define SOM_TG4Duration1                        228      // uint8_t
+#define SOM_TG4Duration2                        229      // uint8_t
+#define SOM_TG4Duration3                        230      // uint8_t
+#define SOM_TG4Duration4                        231      // uint8_t
+#define SOM_TG4Duration5                        232      // uint8_t
+#define SOM_TG4Duration6                        233      // uint8_t
+#define SOM_TG4Duration7                        234      // uint8_t
+#define SOM_TG4Duration8                        235      // uint8_t
+#define SOM_TG4Duration9                        236      // uint8_t
+#define SOM_TG4Frequency1                       237      // uint16_t
+#define SOM_TG4Frequency2                       239      // uint16_t
+#define SOM_TG4Frequency3                       241      // uint16_t
+#define SOM_TG4Frequency4                       243      // uint16_t
+#define SOM_TG4Frequency5                       245      // uint16_t
+#define SOM_TG4Frequency6                       247      // uint16_t
+#define SOM_TG4Frequency7                       249      // uint16_t
+#define SOM_TG4Frequency8                       251      // uint16_t
+#define SOM_TG4Frequency9                       253      // uint16_t
+#define SOM_TG5Mode                             255      // 2 Bits, Bit 7-6
+#define     SOM_TG5ModeMask 0xC0
+#define     SOM_TG5ModeShift 6
+#define SOM_TG5Repeats                          256      // uint8_t
+#define SOM_TG5RepeatPause                      257      // uint8_t
+#define SOM_TG5Duration1                        259      // uint8_t
+#define SOM_TG5Duration2                        260      // uint8_t
+#define SOM_TG5Duration3                        261      // uint8_t
+#define SOM_TG5Duration4                        262      // uint8_t
+#define SOM_TG5Duration5                        263      // uint8_t
+#define SOM_TG5Duration6                        264      // uint8_t
+#define SOM_TG5Duration7                        265      // uint8_t
+#define SOM_TG5Duration8                        266      // uint8_t
+#define SOM_TG5Duration9                        267      // uint8_t
+#define SOM_TG5Frequency1                       268      // uint16_t
+#define SOM_TG5Frequency2                       270      // uint16_t
+#define SOM_TG5Frequency3                       272      // uint16_t
+#define SOM_TG5Frequency4                       274      // uint16_t
+#define SOM_TG5Frequency5                       276      // uint16_t
+#define SOM_TG5Frequency6                       278      // uint16_t
+#define SOM_TG5Frequency7                       280      // uint16_t
+#define SOM_TG5Frequency8                       282      // uint16_t
+#define SOM_TG5Frequency9                       284      // uint16_t
+#define SOM_TG6Mode                             286      // 2 Bits, Bit 7-6
+#define     SOM_TG6ModeMask 0xC0
+#define     SOM_TG6ModeShift 6
+#define SOM_TG6Repeats                          287      // uint8_t
+#define SOM_TG6RepeatPause                      288      // uint8_t
+#define SOM_TG6Duration1                        290      // uint8_t
+#define SOM_TG6Duration2                        291      // uint8_t
+#define SOM_TG6Duration3                        292      // uint8_t
+#define SOM_TG6Duration4                        293      // uint8_t
+#define SOM_TG6Duration5                        294      // uint8_t
+#define SOM_TG6Duration6                        295      // uint8_t
+#define SOM_TG6Duration7                        296      // uint8_t
+#define SOM_TG6Duration8                        297      // uint8_t
+#define SOM_TG6Duration9                        298      // uint8_t
+#define SOM_TG6Frequency1                       299      // uint16_t
+#define SOM_TG6Frequency2                       301      // uint16_t
+#define SOM_TG6Frequency3                       303      // uint16_t
+#define SOM_TG6Frequency4                       305      // uint16_t
+#define SOM_TG6Frequency5                       307      // uint16_t
+#define SOM_TG6Frequency6                       309      // uint16_t
+#define SOM_TG6Frequency7                       311      // uint16_t
+#define SOM_TG6Frequency8                       313      // uint16_t
+#define SOM_TG6Frequency9                       315      // uint16_t
+#define SOM_TG7Mode                             317      // 2 Bits, Bit 7-6
+#define     SOM_TG7ModeMask 0xC0
+#define     SOM_TG7ModeShift 6
+#define SOM_TG7Repeats                          318      // uint8_t
+#define SOM_TG7RepeatPause                      319      // uint8_t
+#define SOM_TG7Duration1                        321      // uint8_t
+#define SOM_TG7Duration2                        322      // uint8_t
+#define SOM_TG7Duration3                        323      // uint8_t
+#define SOM_TG7Duration4                        324      // uint8_t
+#define SOM_TG7Duration5                        325      // uint8_t
+#define SOM_TG7Duration6                        326      // uint8_t
+#define SOM_TG7Duration7                        327      // uint8_t
+#define SOM_TG7Duration8                        328      // uint8_t
+#define SOM_TG7Duration9                        329      // uint8_t
+#define SOM_TG7Frequency1                       330      // uint16_t
+#define SOM_TG7Frequency2                       332      // uint16_t
+#define SOM_TG7Frequency3                       334      // uint16_t
+#define SOM_TG7Frequency4                       336      // uint16_t
+#define SOM_TG7Frequency5                       338      // uint16_t
+#define SOM_TG7Frequency6                       340      // uint16_t
+#define SOM_TG7Frequency7                       342      // uint16_t
+#define SOM_TG7Frequency8                       344      // uint16_t
+#define SOM_TG7Frequency9                       346      // uint16_t
+#define SOM_TG8Mode                             348      // 2 Bits, Bit 7-6
+#define     SOM_TG8ModeMask 0xC0
+#define     SOM_TG8ModeShift 6
+#define SOM_TG8Repeats                          349      // uint8_t
+#define SOM_TG8RepeatPause                      350      // uint8_t
+#define SOM_TG8Duration1                        352      // uint8_t
+#define SOM_TG8Duration2                        353      // uint8_t
+#define SOM_TG8Duration3                        354      // uint8_t
+#define SOM_TG8Duration4                        355      // uint8_t
+#define SOM_TG8Duration5                        356      // uint8_t
+#define SOM_TG8Duration6                        357      // uint8_t
+#define SOM_TG8Duration7                        358      // uint8_t
+#define SOM_TG8Duration8                        359      // uint8_t
+#define SOM_TG8Duration9                        360      // uint8_t
+#define SOM_TG8Frequency1                       361      // uint16_t
+#define SOM_TG8Frequency2                       363      // uint16_t
+#define SOM_TG8Frequency3                       365      // uint16_t
+#define SOM_TG8Frequency4                       367      // uint16_t
+#define SOM_TG8Frequency5                       369      // uint16_t
+#define SOM_TG8Frequency6                       371      // uint16_t
+#define SOM_TG8Frequency7                       373      // uint16_t
+#define SOM_TG8Frequency8                       375      // uint16_t
+#define SOM_TG8Frequency9                       377      // uint16_t
+#define SOM_TG9Mode                             379      // 2 Bits, Bit 7-6
+#define     SOM_TG9ModeMask 0xC0
+#define     SOM_TG9ModeShift 6
+#define SOM_TG9Repeats                          380      // uint8_t
+#define SOM_TG9RepeatPause                      381      // uint8_t
+#define SOM_TG9Duration1                        383      // uint8_t
+#define SOM_TG9Duration2                        384      // uint8_t
+#define SOM_TG9Duration3                        385      // uint8_t
+#define SOM_TG9Duration4                        386      // uint8_t
+#define SOM_TG9Duration5                        387      // uint8_t
+#define SOM_TG9Duration6                        388      // uint8_t
+#define SOM_TG9Duration7                        389      // uint8_t
+#define SOM_TG9Duration8                        390      // uint8_t
+#define SOM_TG9Duration9                        391      // uint8_t
+#define SOM_TG9Frequency1                       392      // uint16_t
+#define SOM_TG9Frequency2                       394      // uint16_t
+#define SOM_TG9Frequency3                       396      // uint16_t
+#define SOM_TG9Frequency4                       398      // uint16_t
+#define SOM_TG9Frequency5                       400      // uint16_t
+#define SOM_TG9Frequency6                       402      // uint16_t
+#define SOM_TG9Frequency7                       404      // uint16_t
+#define SOM_TG9Frequency8                       406      // uint16_t
+#define SOM_TG9Frequency9                       408      // uint16_t
 
 // Externe Logik
 #define ParamSOM_External                            ((bool)(knx.paramByte(SOM_External) & SOM_ExternalMask))
@@ -414,6 +621,384 @@
 #define ParamSOM_SceneTargetB18                      (knx.paramByte(SOM_SceneTargetB18))
 // SceneTargetB9
 #define ParamSOM_SceneTargetB19                      (knx.paramByte(SOM_SceneTargetB19))
+// Modus
+#define ParamSOM_TG1Mode                             ((knx.paramByte(SOM_TG1Mode) & SOM_TG1ModeMask) >> SOM_TG1ModeShift)
+// 
+#define ParamSOM_TG1Repeats                          (knx.paramByte(SOM_TG1Repeats))
+// Pause zwischen der Wiederholung
+#define ParamSOM_TG1RepeatPause                      (knx.paramByte(SOM_TG1RepeatPause))
+// Dauer
+#define ParamSOM_TG1Duration1                        (knx.paramByte(SOM_TG1Duration1))
+// 
+#define ParamSOM_TG1Duration2                        (knx.paramByte(SOM_TG1Duration2))
+// 
+#define ParamSOM_TG1Duration3                        (knx.paramByte(SOM_TG1Duration3))
+// 
+#define ParamSOM_TG1Duration4                        (knx.paramByte(SOM_TG1Duration4))
+// 
+#define ParamSOM_TG1Duration5                        (knx.paramByte(SOM_TG1Duration5))
+// 
+#define ParamSOM_TG1Duration6                        (knx.paramByte(SOM_TG1Duration6))
+// 
+#define ParamSOM_TG1Duration7                        (knx.paramByte(SOM_TG1Duration7))
+// 
+#define ParamSOM_TG1Duration8                        (knx.paramByte(SOM_TG1Duration8))
+// 
+#define ParamSOM_TG1Duration9                        (knx.paramByte(SOM_TG1Duration9))
+// Frequenz
+#define ParamSOM_TG1Frequency1                       (knx.paramWord(SOM_TG1Frequency1))
+// 
+#define ParamSOM_TG1Frequency2                       (knx.paramWord(SOM_TG1Frequency2))
+// 
+#define ParamSOM_TG1Frequency3                       (knx.paramWord(SOM_TG1Frequency3))
+// 
+#define ParamSOM_TG1Frequency4                       (knx.paramWord(SOM_TG1Frequency4))
+// 
+#define ParamSOM_TG1Frequency5                       (knx.paramWord(SOM_TG1Frequency5))
+// 
+#define ParamSOM_TG1Frequency6                       (knx.paramWord(SOM_TG1Frequency6))
+// 
+#define ParamSOM_TG1Frequency7                       (knx.paramWord(SOM_TG1Frequency7))
+// 
+#define ParamSOM_TG1Frequency8                       (knx.paramWord(SOM_TG1Frequency8))
+// 
+#define ParamSOM_TG1Frequency9                       (knx.paramWord(SOM_TG1Frequency9))
+// Modus
+#define ParamSOM_TG2Mode                             ((knx.paramByte(SOM_TG2Mode) & SOM_TG2ModeMask) >> SOM_TG2ModeShift)
+// 
+#define ParamSOM_TG2Repeats                          (knx.paramByte(SOM_TG2Repeats))
+// Pause zwischen der Wiederholung
+#define ParamSOM_TG2RepeatPause                      (knx.paramByte(SOM_TG2RepeatPause))
+// Dauer
+#define ParamSOM_TG2Duration1                        (knx.paramByte(SOM_TG2Duration1))
+// 
+#define ParamSOM_TG2Duration2                        (knx.paramByte(SOM_TG2Duration2))
+// 
+#define ParamSOM_TG2Duration3                        (knx.paramByte(SOM_TG2Duration3))
+// 
+#define ParamSOM_TG2Duration4                        (knx.paramByte(SOM_TG2Duration4))
+// 
+#define ParamSOM_TG2Duration5                        (knx.paramByte(SOM_TG2Duration5))
+// 
+#define ParamSOM_TG2Duration6                        (knx.paramByte(SOM_TG2Duration6))
+// 
+#define ParamSOM_TG2Duration7                        (knx.paramByte(SOM_TG2Duration7))
+// 
+#define ParamSOM_TG2Duration8                        (knx.paramByte(SOM_TG2Duration8))
+// 
+#define ParamSOM_TG2Duration9                        (knx.paramByte(SOM_TG2Duration9))
+// Frequenz
+#define ParamSOM_TG2Frequency1                       (knx.paramWord(SOM_TG2Frequency1))
+// 
+#define ParamSOM_TG2Frequency2                       (knx.paramWord(SOM_TG2Frequency2))
+// 
+#define ParamSOM_TG2Frequency3                       (knx.paramWord(SOM_TG2Frequency3))
+// 
+#define ParamSOM_TG2Frequency4                       (knx.paramWord(SOM_TG2Frequency4))
+// 
+#define ParamSOM_TG2Frequency5                       (knx.paramWord(SOM_TG2Frequency5))
+// 
+#define ParamSOM_TG2Frequency6                       (knx.paramWord(SOM_TG2Frequency6))
+// 
+#define ParamSOM_TG2Frequency7                       (knx.paramWord(SOM_TG2Frequency7))
+// 
+#define ParamSOM_TG2Frequency8                       (knx.paramWord(SOM_TG2Frequency8))
+// 
+#define ParamSOM_TG2Frequency9                       (knx.paramWord(SOM_TG2Frequency9))
+// Modus
+#define ParamSOM_TG3Mode                             ((knx.paramByte(SOM_TG3Mode) & SOM_TG3ModeMask) >> SOM_TG3ModeShift)
+// 
+#define ParamSOM_TG3Repeats                          (knx.paramByte(SOM_TG3Repeats))
+// Pause zwischen der Wiederholung
+#define ParamSOM_TG3RepeatPause                      (knx.paramByte(SOM_TG3RepeatPause))
+// Dauer
+#define ParamSOM_TG3Duration1                        (knx.paramByte(SOM_TG3Duration1))
+// 
+#define ParamSOM_TG3Duration2                        (knx.paramByte(SOM_TG3Duration2))
+// 
+#define ParamSOM_TG3Duration3                        (knx.paramByte(SOM_TG3Duration3))
+// 
+#define ParamSOM_TG3Duration4                        (knx.paramByte(SOM_TG3Duration4))
+// 
+#define ParamSOM_TG3Duration5                        (knx.paramByte(SOM_TG3Duration5))
+// 
+#define ParamSOM_TG3Duration6                        (knx.paramByte(SOM_TG3Duration6))
+// 
+#define ParamSOM_TG3Duration7                        (knx.paramByte(SOM_TG3Duration7))
+// 
+#define ParamSOM_TG3Duration8                        (knx.paramByte(SOM_TG3Duration8))
+// 
+#define ParamSOM_TG3Duration9                        (knx.paramByte(SOM_TG3Duration9))
+// Frequenz
+#define ParamSOM_TG3Frequency1                       (knx.paramWord(SOM_TG3Frequency1))
+// 
+#define ParamSOM_TG3Frequency2                       (knx.paramWord(SOM_TG3Frequency2))
+// 
+#define ParamSOM_TG3Frequency3                       (knx.paramWord(SOM_TG3Frequency3))
+// 
+#define ParamSOM_TG3Frequency4                       (knx.paramWord(SOM_TG3Frequency4))
+// 
+#define ParamSOM_TG3Frequency5                       (knx.paramWord(SOM_TG3Frequency5))
+// 
+#define ParamSOM_TG3Frequency6                       (knx.paramWord(SOM_TG3Frequency6))
+// 
+#define ParamSOM_TG3Frequency7                       (knx.paramWord(SOM_TG3Frequency7))
+// 
+#define ParamSOM_TG3Frequency8                       (knx.paramWord(SOM_TG3Frequency8))
+// 
+#define ParamSOM_TG3Frequency9                       (knx.paramWord(SOM_TG3Frequency9))
+// Modus
+#define ParamSOM_TG4Mode                             ((knx.paramByte(SOM_TG4Mode) & SOM_TG4ModeMask) >> SOM_TG4ModeShift)
+// 
+#define ParamSOM_TG4Repeats                          (knx.paramByte(SOM_TG4Repeats))
+// Pause zwischen der Wiederholung
+#define ParamSOM_TG4RepeatPause                      (knx.paramByte(SOM_TG4RepeatPause))
+// Dauer
+#define ParamSOM_TG4Duration1                        (knx.paramByte(SOM_TG4Duration1))
+// 
+#define ParamSOM_TG4Duration2                        (knx.paramByte(SOM_TG4Duration2))
+// 
+#define ParamSOM_TG4Duration3                        (knx.paramByte(SOM_TG4Duration3))
+// 
+#define ParamSOM_TG4Duration4                        (knx.paramByte(SOM_TG4Duration4))
+// 
+#define ParamSOM_TG4Duration5                        (knx.paramByte(SOM_TG4Duration5))
+// 
+#define ParamSOM_TG4Duration6                        (knx.paramByte(SOM_TG4Duration6))
+// 
+#define ParamSOM_TG4Duration7                        (knx.paramByte(SOM_TG4Duration7))
+// 
+#define ParamSOM_TG4Duration8                        (knx.paramByte(SOM_TG4Duration8))
+// 
+#define ParamSOM_TG4Duration9                        (knx.paramByte(SOM_TG4Duration9))
+// Frequenz
+#define ParamSOM_TG4Frequency1                       (knx.paramWord(SOM_TG4Frequency1))
+// 
+#define ParamSOM_TG4Frequency2                       (knx.paramWord(SOM_TG4Frequency2))
+// 
+#define ParamSOM_TG4Frequency3                       (knx.paramWord(SOM_TG4Frequency3))
+// 
+#define ParamSOM_TG4Frequency4                       (knx.paramWord(SOM_TG4Frequency4))
+// 
+#define ParamSOM_TG4Frequency5                       (knx.paramWord(SOM_TG4Frequency5))
+// 
+#define ParamSOM_TG4Frequency6                       (knx.paramWord(SOM_TG4Frequency6))
+// 
+#define ParamSOM_TG4Frequency7                       (knx.paramWord(SOM_TG4Frequency7))
+// 
+#define ParamSOM_TG4Frequency8                       (knx.paramWord(SOM_TG4Frequency8))
+// 
+#define ParamSOM_TG4Frequency9                       (knx.paramWord(SOM_TG4Frequency9))
+// Modus
+#define ParamSOM_TG5Mode                             ((knx.paramByte(SOM_TG5Mode) & SOM_TG5ModeMask) >> SOM_TG5ModeShift)
+// 
+#define ParamSOM_TG5Repeats                          (knx.paramByte(SOM_TG5Repeats))
+// Pause zwischen der Wiederholung
+#define ParamSOM_TG5RepeatPause                      (knx.paramByte(SOM_TG5RepeatPause))
+// Dauer
+#define ParamSOM_TG5Duration1                        (knx.paramByte(SOM_TG5Duration1))
+// 
+#define ParamSOM_TG5Duration2                        (knx.paramByte(SOM_TG5Duration2))
+// 
+#define ParamSOM_TG5Duration3                        (knx.paramByte(SOM_TG5Duration3))
+// 
+#define ParamSOM_TG5Duration4                        (knx.paramByte(SOM_TG5Duration4))
+// 
+#define ParamSOM_TG5Duration5                        (knx.paramByte(SOM_TG5Duration5))
+// 
+#define ParamSOM_TG5Duration6                        (knx.paramByte(SOM_TG5Duration6))
+// 
+#define ParamSOM_TG5Duration7                        (knx.paramByte(SOM_TG5Duration7))
+// 
+#define ParamSOM_TG5Duration8                        (knx.paramByte(SOM_TG5Duration8))
+// 
+#define ParamSOM_TG5Duration9                        (knx.paramByte(SOM_TG5Duration9))
+// Frequenz
+#define ParamSOM_TG5Frequency1                       (knx.paramWord(SOM_TG5Frequency1))
+// 
+#define ParamSOM_TG5Frequency2                       (knx.paramWord(SOM_TG5Frequency2))
+// 
+#define ParamSOM_TG5Frequency3                       (knx.paramWord(SOM_TG5Frequency3))
+// 
+#define ParamSOM_TG5Frequency4                       (knx.paramWord(SOM_TG5Frequency4))
+// 
+#define ParamSOM_TG5Frequency5                       (knx.paramWord(SOM_TG5Frequency5))
+// 
+#define ParamSOM_TG5Frequency6                       (knx.paramWord(SOM_TG5Frequency6))
+// 
+#define ParamSOM_TG5Frequency7                       (knx.paramWord(SOM_TG5Frequency7))
+// 
+#define ParamSOM_TG5Frequency8                       (knx.paramWord(SOM_TG5Frequency8))
+// 
+#define ParamSOM_TG5Frequency9                       (knx.paramWord(SOM_TG5Frequency9))
+// Modus
+#define ParamSOM_TG6Mode                             ((knx.paramByte(SOM_TG6Mode) & SOM_TG6ModeMask) >> SOM_TG6ModeShift)
+// 
+#define ParamSOM_TG6Repeats                          (knx.paramByte(SOM_TG6Repeats))
+// Pause zwischen der Wiederholung
+#define ParamSOM_TG6RepeatPause                      (knx.paramByte(SOM_TG6RepeatPause))
+// Dauer
+#define ParamSOM_TG6Duration1                        (knx.paramByte(SOM_TG6Duration1))
+// 
+#define ParamSOM_TG6Duration2                        (knx.paramByte(SOM_TG6Duration2))
+// 
+#define ParamSOM_TG6Duration3                        (knx.paramByte(SOM_TG6Duration3))
+// 
+#define ParamSOM_TG6Duration4                        (knx.paramByte(SOM_TG6Duration4))
+// 
+#define ParamSOM_TG6Duration5                        (knx.paramByte(SOM_TG6Duration5))
+// 
+#define ParamSOM_TG6Duration6                        (knx.paramByte(SOM_TG6Duration6))
+// 
+#define ParamSOM_TG6Duration7                        (knx.paramByte(SOM_TG6Duration7))
+// 
+#define ParamSOM_TG6Duration8                        (knx.paramByte(SOM_TG6Duration8))
+// 
+#define ParamSOM_TG6Duration9                        (knx.paramByte(SOM_TG6Duration9))
+// Frequenz
+#define ParamSOM_TG6Frequency1                       (knx.paramWord(SOM_TG6Frequency1))
+// 
+#define ParamSOM_TG6Frequency2                       (knx.paramWord(SOM_TG6Frequency2))
+// 
+#define ParamSOM_TG6Frequency3                       (knx.paramWord(SOM_TG6Frequency3))
+// 
+#define ParamSOM_TG6Frequency4                       (knx.paramWord(SOM_TG6Frequency4))
+// 
+#define ParamSOM_TG6Frequency5                       (knx.paramWord(SOM_TG6Frequency5))
+// 
+#define ParamSOM_TG6Frequency6                       (knx.paramWord(SOM_TG6Frequency6))
+// 
+#define ParamSOM_TG6Frequency7                       (knx.paramWord(SOM_TG6Frequency7))
+// 
+#define ParamSOM_TG6Frequency8                       (knx.paramWord(SOM_TG6Frequency8))
+// 
+#define ParamSOM_TG6Frequency9                       (knx.paramWord(SOM_TG6Frequency9))
+// Modus
+#define ParamSOM_TG7Mode                             ((knx.paramByte(SOM_TG7Mode) & SOM_TG7ModeMask) >> SOM_TG7ModeShift)
+// 
+#define ParamSOM_TG7Repeats                          (knx.paramByte(SOM_TG7Repeats))
+// Pause zwischen der Wiederholung
+#define ParamSOM_TG7RepeatPause                      (knx.paramByte(SOM_TG7RepeatPause))
+// Dauer
+#define ParamSOM_TG7Duration1                        (knx.paramByte(SOM_TG7Duration1))
+// 
+#define ParamSOM_TG7Duration2                        (knx.paramByte(SOM_TG7Duration2))
+// 
+#define ParamSOM_TG7Duration3                        (knx.paramByte(SOM_TG7Duration3))
+// 
+#define ParamSOM_TG7Duration4                        (knx.paramByte(SOM_TG7Duration4))
+// 
+#define ParamSOM_TG7Duration5                        (knx.paramByte(SOM_TG7Duration5))
+// 
+#define ParamSOM_TG7Duration6                        (knx.paramByte(SOM_TG7Duration6))
+// 
+#define ParamSOM_TG7Duration7                        (knx.paramByte(SOM_TG7Duration7))
+// 
+#define ParamSOM_TG7Duration8                        (knx.paramByte(SOM_TG7Duration8))
+// 
+#define ParamSOM_TG7Duration9                        (knx.paramByte(SOM_TG7Duration9))
+// Frequenz
+#define ParamSOM_TG7Frequency1                       (knx.paramWord(SOM_TG7Frequency1))
+// 
+#define ParamSOM_TG7Frequency2                       (knx.paramWord(SOM_TG7Frequency2))
+// 
+#define ParamSOM_TG7Frequency3                       (knx.paramWord(SOM_TG7Frequency3))
+// 
+#define ParamSOM_TG7Frequency4                       (knx.paramWord(SOM_TG7Frequency4))
+// 
+#define ParamSOM_TG7Frequency5                       (knx.paramWord(SOM_TG7Frequency5))
+// 
+#define ParamSOM_TG7Frequency6                       (knx.paramWord(SOM_TG7Frequency6))
+// 
+#define ParamSOM_TG7Frequency7                       (knx.paramWord(SOM_TG7Frequency7))
+// 
+#define ParamSOM_TG7Frequency8                       (knx.paramWord(SOM_TG7Frequency8))
+// 
+#define ParamSOM_TG7Frequency9                       (knx.paramWord(SOM_TG7Frequency9))
+// Modus
+#define ParamSOM_TG8Mode                             ((knx.paramByte(SOM_TG8Mode) & SOM_TG8ModeMask) >> SOM_TG8ModeShift)
+// 
+#define ParamSOM_TG8Repeats                          (knx.paramByte(SOM_TG8Repeats))
+// Pause zwischen der Wiederholung
+#define ParamSOM_TG8RepeatPause                      (knx.paramByte(SOM_TG8RepeatPause))
+// Dauer
+#define ParamSOM_TG8Duration1                        (knx.paramByte(SOM_TG8Duration1))
+// 
+#define ParamSOM_TG8Duration2                        (knx.paramByte(SOM_TG8Duration2))
+// 
+#define ParamSOM_TG8Duration3                        (knx.paramByte(SOM_TG8Duration3))
+// 
+#define ParamSOM_TG8Duration4                        (knx.paramByte(SOM_TG8Duration4))
+// 
+#define ParamSOM_TG8Duration5                        (knx.paramByte(SOM_TG8Duration5))
+// 
+#define ParamSOM_TG8Duration6                        (knx.paramByte(SOM_TG8Duration6))
+// 
+#define ParamSOM_TG8Duration7                        (knx.paramByte(SOM_TG8Duration7))
+// 
+#define ParamSOM_TG8Duration8                        (knx.paramByte(SOM_TG8Duration8))
+// 
+#define ParamSOM_TG8Duration9                        (knx.paramByte(SOM_TG8Duration9))
+// Frequenz
+#define ParamSOM_TG8Frequency1                       (knx.paramWord(SOM_TG8Frequency1))
+// 
+#define ParamSOM_TG8Frequency2                       (knx.paramWord(SOM_TG8Frequency2))
+// 
+#define ParamSOM_TG8Frequency3                       (knx.paramWord(SOM_TG8Frequency3))
+// 
+#define ParamSOM_TG8Frequency4                       (knx.paramWord(SOM_TG8Frequency4))
+// 
+#define ParamSOM_TG8Frequency5                       (knx.paramWord(SOM_TG8Frequency5))
+// 
+#define ParamSOM_TG8Frequency6                       (knx.paramWord(SOM_TG8Frequency6))
+// 
+#define ParamSOM_TG8Frequency7                       (knx.paramWord(SOM_TG8Frequency7))
+// 
+#define ParamSOM_TG8Frequency8                       (knx.paramWord(SOM_TG8Frequency8))
+// 
+#define ParamSOM_TG8Frequency9                       (knx.paramWord(SOM_TG8Frequency9))
+// Modus
+#define ParamSOM_TG9Mode                             ((knx.paramByte(SOM_TG9Mode) & SOM_TG9ModeMask) >> SOM_TG9ModeShift)
+// 
+#define ParamSOM_TG9Repeats                          (knx.paramByte(SOM_TG9Repeats))
+// Pause zwischen der Wiederholung
+#define ParamSOM_TG9RepeatPause                      (knx.paramByte(SOM_TG9RepeatPause))
+// Dauer
+#define ParamSOM_TG9Duration1                        (knx.paramByte(SOM_TG9Duration1))
+// 
+#define ParamSOM_TG9Duration2                        (knx.paramByte(SOM_TG9Duration2))
+// 
+#define ParamSOM_TG9Duration3                        (knx.paramByte(SOM_TG9Duration3))
+// 
+#define ParamSOM_TG9Duration4                        (knx.paramByte(SOM_TG9Duration4))
+// 
+#define ParamSOM_TG9Duration5                        (knx.paramByte(SOM_TG9Duration5))
+// 
+#define ParamSOM_TG9Duration6                        (knx.paramByte(SOM_TG9Duration6))
+// 
+#define ParamSOM_TG9Duration7                        (knx.paramByte(SOM_TG9Duration7))
+// 
+#define ParamSOM_TG9Duration8                        (knx.paramByte(SOM_TG9Duration8))
+// 
+#define ParamSOM_TG9Duration9                        (knx.paramByte(SOM_TG9Duration9))
+// Frequenz
+#define ParamSOM_TG9Frequency1                       (knx.paramWord(SOM_TG9Frequency1))
+// 
+#define ParamSOM_TG9Frequency2                       (knx.paramWord(SOM_TG9Frequency2))
+// 
+#define ParamSOM_TG9Frequency3                       (knx.paramWord(SOM_TG9Frequency3))
+// 
+#define ParamSOM_TG9Frequency4                       (knx.paramWord(SOM_TG9Frequency4))
+// 
+#define ParamSOM_TG9Frequency5                       (knx.paramWord(SOM_TG9Frequency5))
+// 
+#define ParamSOM_TG9Frequency6                       (knx.paramWord(SOM_TG9Frequency6))
+// 
+#define ParamSOM_TG9Frequency7                       (knx.paramWord(SOM_TG9Frequency7))
+// 
+#define ParamSOM_TG9Frequency8                       (knx.paramWord(SOM_TG9Frequency8))
+// 
+#define ParamSOM_TG9Frequency9                       (knx.paramWord(SOM_TG9Frequency9))
 
 #define SOM_KoStatus 20
 #define SOM_KoFile 21
@@ -444,7 +1029,7 @@
 #define SOM_ChannelCount 10
 
 // Parameter per channel
-#define SOM_ParamBlockOffset 131
+#define SOM_ParamBlockOffset 410
 #define SOM_ParamBlockSize 11
 #define SOM_ParamCalcIndex(index) (index + SOM_ParamBlockOffset + _channelIndex * SOM_ParamBlockSize)
 
@@ -531,80 +1116,6 @@
 #define KoSOM_TriggerLock                         (knx.getGroupObject(SOM_KoCalcNumber(SOM_KoTriggerLock)))
 // 
 #define KoSOM_TriggerDayNight                     (knx.getGroupObject(SOM_KoCalcNumber(SOM_KoTriggerDayNight)))
-
-#define TONE_ChannelCount 9
-
-// Parameter per channel
-#define TONE_ParamBlockOffset 241
-#define TONE_ParamBlockSize 31
-#define TONE_ParamCalcIndex(index) (index + TONE_ParamBlockOffset + _channelIndex * TONE_ParamBlockSize)
-
-#define TONE_ToneGeneratorMode                    0      // 2 Bits, Bit 7-6
-#define     TONE_ToneGeneratorModeMask 0xC0
-#define     TONE_ToneGeneratorModeShift 6
-#define TONE_ToneGeneratorRepeats                 1      // uint8_t
-#define TONE_ToneGeneratorRepeatPause             2      // uint8_t
-#define TONE_ToneGeneratorDuration1               4      // uint8_t
-#define TONE_ToneGeneratorDuration2               5      // uint8_t
-#define TONE_ToneGeneratorDuration3               6      // uint8_t
-#define TONE_ToneGeneratorDuration4               7      // uint8_t
-#define TONE_ToneGeneratorDuration5               8      // uint8_t
-#define TONE_ToneGeneratorDuration6               9      // uint8_t
-#define TONE_ToneGeneratorDuration7              10      // uint8_t
-#define TONE_ToneGeneratorDuration8              11      // uint8_t
-#define TONE_ToneGeneratorDuration9              12      // uint8_t
-#define TONE_ToneGeneratorFrequency1             13      // uint16_t
-#define TONE_ToneGeneratorFrequency2             15      // uint16_t
-#define TONE_ToneGeneratorFrequency3             17      // uint16_t
-#define TONE_ToneGeneratorFrequency4             19      // uint16_t
-#define TONE_ToneGeneratorFrequency5             21      // uint16_t
-#define TONE_ToneGeneratorFrequency6             23      // uint16_t
-#define TONE_ToneGeneratorFrequency7             25      // uint16_t
-#define TONE_ToneGeneratorFrequency8             27      // uint16_t
-#define TONE_ToneGeneratorFrequency9             29      // uint16_t
-
-// Modus
-#define ParamTONE_ToneGeneratorMode                   ((knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorMode)) & TONE_ToneGeneratorModeMask) >> TONE_ToneGeneratorModeShift)
-// 
-#define ParamTONE_ToneGeneratorRepeats                (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorRepeats)))
-// Pause zwischen der Wiederholung
-#define ParamTONE_ToneGeneratorRepeatPause            (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorRepeatPause)))
-// Dauer
-#define ParamTONE_ToneGeneratorDuration1              (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorDuration1)))
-// 
-#define ParamTONE_ToneGeneratorDuration2              (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorDuration2)))
-// 
-#define ParamTONE_ToneGeneratorDuration3              (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorDuration3)))
-// 
-#define ParamTONE_ToneGeneratorDuration4              (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorDuration4)))
-// 
-#define ParamTONE_ToneGeneratorDuration5              (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorDuration5)))
-// 
-#define ParamTONE_ToneGeneratorDuration6              (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorDuration6)))
-// 
-#define ParamTONE_ToneGeneratorDuration7              (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorDuration7)))
-// 
-#define ParamTONE_ToneGeneratorDuration8              (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorDuration8)))
-// 
-#define ParamTONE_ToneGeneratorDuration9              (knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorDuration9)))
-// Frequenz
-#define ParamTONE_ToneGeneratorFrequency1             (knx.paramWord(TONE_ParamCalcIndex(TONE_ToneGeneratorFrequency1)))
-// 
-#define ParamTONE_ToneGeneratorFrequency2             (knx.paramWord(TONE_ParamCalcIndex(TONE_ToneGeneratorFrequency2)))
-// 
-#define ParamTONE_ToneGeneratorFrequency3             (knx.paramWord(TONE_ParamCalcIndex(TONE_ToneGeneratorFrequency3)))
-// 
-#define ParamTONE_ToneGeneratorFrequency4             (knx.paramWord(TONE_ParamCalcIndex(TONE_ToneGeneratorFrequency4)))
-// 
-#define ParamTONE_ToneGeneratorFrequency5             (knx.paramWord(TONE_ParamCalcIndex(TONE_ToneGeneratorFrequency5)))
-// 
-#define ParamTONE_ToneGeneratorFrequency6             (knx.paramWord(TONE_ParamCalcIndex(TONE_ToneGeneratorFrequency6)))
-// 
-#define ParamTONE_ToneGeneratorFrequency7             (knx.paramWord(TONE_ParamCalcIndex(TONE_ToneGeneratorFrequency7)))
-// 
-#define ParamTONE_ToneGeneratorFrequency8             (knx.paramWord(TONE_ParamCalcIndex(TONE_ToneGeneratorFrequency8)))
-// 
-#define ParamTONE_ToneGeneratorFrequency9             (knx.paramWord(TONE_ParamCalcIndex(TONE_ToneGeneratorFrequency9)))
 
 #define BI_ChannelCount 4
 
@@ -1363,6 +1874,126 @@
 #define LOG_LedMapping                          1572      // 3 Bits, Bit 7-5
 #define     LOG_LedMappingMask 0xE0
 #define     LOG_LedMappingShift 5
+#define LOG_UserFormula1                        1573      // char*, 99 Byte
+#define LOG_UserFormula1Active                  1652      // 1 Bit, Bit 7
+#define     LOG_UserFormula1ActiveMask 0x80
+#define     LOG_UserFormula1ActiveShift 7
+#define LOG_UserFormula2                        1653      // char*, 99 Byte
+#define LOG_UserFormula2Active                  1732      // 1 Bit, Bit 7
+#define     LOG_UserFormula2ActiveMask 0x80
+#define     LOG_UserFormula2ActiveShift 7
+#define LOG_UserFormula3                        1733      // char*, 99 Byte
+#define LOG_UserFormula3Active                  1812      // 1 Bit, Bit 7
+#define     LOG_UserFormula3ActiveMask 0x80
+#define     LOG_UserFormula3ActiveShift 7
+#define LOG_UserFormula4                        1813      // char*, 99 Byte
+#define LOG_UserFormula4Active                  1892      // 1 Bit, Bit 7
+#define     LOG_UserFormula4ActiveMask 0x80
+#define     LOG_UserFormula4ActiveShift 7
+#define LOG_UserFormula5                        1893      // char*, 99 Byte
+#define LOG_UserFormula5Active                  1972      // 1 Bit, Bit 7
+#define     LOG_UserFormula5ActiveMask 0x80
+#define     LOG_UserFormula5ActiveShift 7
+#define LOG_UserFormula6                        1973      // char*, 99 Byte
+#define LOG_UserFormula6Active                  2052      // 1 Bit, Bit 7
+#define     LOG_UserFormula6ActiveMask 0x80
+#define     LOG_UserFormula6ActiveShift 7
+#define LOG_UserFormula7                        2053      // char*, 99 Byte
+#define LOG_UserFormula7Active                  2132      // 1 Bit, Bit 7
+#define     LOG_UserFormula7ActiveMask 0x80
+#define     LOG_UserFormula7ActiveShift 7
+#define LOG_UserFormula8                        2133      // char*, 99 Byte
+#define LOG_UserFormula8Active                  2212      // 1 Bit, Bit 7
+#define     LOG_UserFormula8ActiveMask 0x80
+#define     LOG_UserFormula8ActiveShift 7
+#define LOG_UserFormula9                        2213      // char*, 99 Byte
+#define LOG_UserFormula9Active                  2292      // 1 Bit, Bit 7
+#define     LOG_UserFormula9ActiveMask 0x80
+#define     LOG_UserFormula9ActiveShift 7
+#define LOG_UserFormula10                       2293      // char*, 99 Byte
+#define LOG_UserFormula10Active                 2372      // 1 Bit, Bit 7
+#define     LOG_UserFormula10ActiveMask 0x80
+#define     LOG_UserFormula10ActiveShift 7
+#define LOG_UserFormula11                       2373      // char*, 99 Byte
+#define LOG_UserFormula11Active                 2452      // 1 Bit, Bit 7
+#define     LOG_UserFormula11ActiveMask 0x80
+#define     LOG_UserFormula11ActiveShift 7
+#define LOG_UserFormula12                       2453      // char*, 99 Byte
+#define LOG_UserFormula12Active                 2532      // 1 Bit, Bit 7
+#define     LOG_UserFormula12ActiveMask 0x80
+#define     LOG_UserFormula12ActiveShift 7
+#define LOG_UserFormula13                       2533      // char*, 99 Byte
+#define LOG_UserFormula13Active                 2612      // 1 Bit, Bit 7
+#define     LOG_UserFormula13ActiveMask 0x80
+#define     LOG_UserFormula13ActiveShift 7
+#define LOG_UserFormula14                       2613      // char*, 99 Byte
+#define LOG_UserFormula14Active                 2692      // 1 Bit, Bit 7
+#define     LOG_UserFormula14ActiveMask 0x80
+#define     LOG_UserFormula14ActiveShift 7
+#define LOG_UserFormula15                       2693      // char*, 99 Byte
+#define LOG_UserFormula15Active                 2772      // 1 Bit, Bit 7
+#define     LOG_UserFormula15ActiveMask 0x80
+#define     LOG_UserFormula15ActiveShift 7
+#define LOG_UserFormula16                       2773      // char*, 99 Byte
+#define LOG_UserFormula16Active                 2852      // 1 Bit, Bit 7
+#define     LOG_UserFormula16ActiveMask 0x80
+#define     LOG_UserFormula16ActiveShift 7
+#define LOG_UserFormula17                       2853      // char*, 99 Byte
+#define LOG_UserFormula17Active                 2932      // 1 Bit, Bit 7
+#define     LOG_UserFormula17ActiveMask 0x80
+#define     LOG_UserFormula17ActiveShift 7
+#define LOG_UserFormula18                       2933      // char*, 99 Byte
+#define LOG_UserFormula18Active                 3012      // 1 Bit, Bit 7
+#define     LOG_UserFormula18ActiveMask 0x80
+#define     LOG_UserFormula18ActiveShift 7
+#define LOG_UserFormula19                       3013      // char*, 99 Byte
+#define LOG_UserFormula19Active                 3092      // 1 Bit, Bit 7
+#define     LOG_UserFormula19ActiveMask 0x80
+#define     LOG_UserFormula19ActiveShift 7
+#define LOG_UserFormula20                       3093      // char*, 99 Byte
+#define LOG_UserFormula20Active                 3172      // 1 Bit, Bit 7
+#define     LOG_UserFormula20ActiveMask 0x80
+#define     LOG_UserFormula20ActiveShift 7
+#define LOG_UserFormula21                       3173      // char*, 99 Byte
+#define LOG_UserFormula21Active                 3252      // 1 Bit, Bit 7
+#define     LOG_UserFormula21ActiveMask 0x80
+#define     LOG_UserFormula21ActiveShift 7
+#define LOG_UserFormula22                       3253      // char*, 99 Byte
+#define LOG_UserFormula22Active                 3332      // 1 Bit, Bit 7
+#define     LOG_UserFormula22ActiveMask 0x80
+#define     LOG_UserFormula22ActiveShift 7
+#define LOG_UserFormula23                       3333      // char*, 99 Byte
+#define LOG_UserFormula23Active                 3412      // 1 Bit, Bit 7
+#define     LOG_UserFormula23ActiveMask 0x80
+#define     LOG_UserFormula23ActiveShift 7
+#define LOG_UserFormula24                       3413      // char*, 99 Byte
+#define LOG_UserFormula24Active                 3492      // 1 Bit, Bit 7
+#define     LOG_UserFormula24ActiveMask 0x80
+#define     LOG_UserFormula24ActiveShift 7
+#define LOG_UserFormula25                       3493      // char*, 99 Byte
+#define LOG_UserFormula25Active                 3572      // 1 Bit, Bit 7
+#define     LOG_UserFormula25ActiveMask 0x80
+#define     LOG_UserFormula25ActiveShift 7
+#define LOG_UserFormula26                       3573      // char*, 99 Byte
+#define LOG_UserFormula26Active                 3652      // 1 Bit, Bit 7
+#define     LOG_UserFormula26ActiveMask 0x80
+#define     LOG_UserFormula26ActiveShift 7
+#define LOG_UserFormula27                       3653      // char*, 99 Byte
+#define LOG_UserFormula27Active                 3732      // 1 Bit, Bit 7
+#define     LOG_UserFormula27ActiveMask 0x80
+#define     LOG_UserFormula27ActiveShift 7
+#define LOG_UserFormula28                       3733      // char*, 99 Byte
+#define LOG_UserFormula28Active                 3812      // 1 Bit, Bit 7
+#define     LOG_UserFormula28ActiveMask 0x80
+#define     LOG_UserFormula28ActiveShift 7
+#define LOG_UserFormula29                       3813      // char*, 99 Byte
+#define LOG_UserFormula29Active                 3892      // 1 Bit, Bit 7
+#define     LOG_UserFormula29ActiveMask 0x80
+#define     LOG_UserFormula29ActiveShift 7
+#define LOG_UserFormula30                       3893      // char*, 99 Byte
+#define LOG_UserFormula30Active                 3972      // 1 Bit, Bit 7
+#define     LOG_UserFormula30ActiveMask 0x80
+#define     LOG_UserFormula30ActiveShift 7
 
 // Akustischer Signalgeber vorhanden (Buzzer)?
 #define ParamLOG_BuzzerInstalled                     ((bool)(knx.paramByte(LOG_BuzzerInstalled) & LOG_BuzzerInstalledMask))
@@ -1450,6 +2081,126 @@
 #define ParamLOG_VisibleChannels                     (knx.paramByte(LOG_VisibleChannels))
 // Lötpad A / B / C entspricht
 #define ParamLOG_LedMapping                          ((knx.paramByte(LOG_LedMapping) & LOG_LedMappingMask) >> LOG_LedMappingShift)
+// Formeldefinition
+#define ParamLOG_UserFormula1                        (knx.paramData(LOG_UserFormula1))
+// Benutzerformel 1 aktiv
+#define ParamLOG_UserFormula1Active                  ((bool)(knx.paramByte(LOG_UserFormula1Active) & LOG_UserFormula1ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula2                        (knx.paramData(LOG_UserFormula2))
+// Benutzerformel 2 aktiv
+#define ParamLOG_UserFormula2Active                  ((bool)(knx.paramByte(LOG_UserFormula2Active) & LOG_UserFormula2ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula3                        (knx.paramData(LOG_UserFormula3))
+// Benutzerformel 3 aktiv
+#define ParamLOG_UserFormula3Active                  ((bool)(knx.paramByte(LOG_UserFormula3Active) & LOG_UserFormula3ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula4                        (knx.paramData(LOG_UserFormula4))
+// Benutzerformel 4 aktiv
+#define ParamLOG_UserFormula4Active                  ((bool)(knx.paramByte(LOG_UserFormula4Active) & LOG_UserFormula4ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula5                        (knx.paramData(LOG_UserFormula5))
+// Benutzerformel 5 aktiv
+#define ParamLOG_UserFormula5Active                  ((bool)(knx.paramByte(LOG_UserFormula5Active) & LOG_UserFormula5ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula6                        (knx.paramData(LOG_UserFormula6))
+// Benutzerformel 6 aktiv
+#define ParamLOG_UserFormula6Active                  ((bool)(knx.paramByte(LOG_UserFormula6Active) & LOG_UserFormula6ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula7                        (knx.paramData(LOG_UserFormula7))
+// Benutzerformel 7 aktiv
+#define ParamLOG_UserFormula7Active                  ((bool)(knx.paramByte(LOG_UserFormula7Active) & LOG_UserFormula7ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula8                        (knx.paramData(LOG_UserFormula8))
+// Benutzerformel 8 aktiv
+#define ParamLOG_UserFormula8Active                  ((bool)(knx.paramByte(LOG_UserFormula8Active) & LOG_UserFormula8ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula9                        (knx.paramData(LOG_UserFormula9))
+// Benutzerformel 9 aktiv
+#define ParamLOG_UserFormula9Active                  ((bool)(knx.paramByte(LOG_UserFormula9Active) & LOG_UserFormula9ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula10                       (knx.paramData(LOG_UserFormula10))
+// Benutzerformel 10 aktiv
+#define ParamLOG_UserFormula10Active                 ((bool)(knx.paramByte(LOG_UserFormula10Active) & LOG_UserFormula10ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula11                       (knx.paramData(LOG_UserFormula11))
+// Benutzerformel 11 aktiv
+#define ParamLOG_UserFormula11Active                 ((bool)(knx.paramByte(LOG_UserFormula11Active) & LOG_UserFormula11ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula12                       (knx.paramData(LOG_UserFormula12))
+// Benutzerformel 12 aktiv
+#define ParamLOG_UserFormula12Active                 ((bool)(knx.paramByte(LOG_UserFormula12Active) & LOG_UserFormula12ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula13                       (knx.paramData(LOG_UserFormula13))
+// Benutzerformel 13 aktiv
+#define ParamLOG_UserFormula13Active                 ((bool)(knx.paramByte(LOG_UserFormula13Active) & LOG_UserFormula13ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula14                       (knx.paramData(LOG_UserFormula14))
+// Benutzerformel 14 aktiv
+#define ParamLOG_UserFormula14Active                 ((bool)(knx.paramByte(LOG_UserFormula14Active) & LOG_UserFormula14ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula15                       (knx.paramData(LOG_UserFormula15))
+// Benutzerformel 15 aktiv
+#define ParamLOG_UserFormula15Active                 ((bool)(knx.paramByte(LOG_UserFormula15Active) & LOG_UserFormula15ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula16                       (knx.paramData(LOG_UserFormula16))
+// Benutzerformel 16 aktiv
+#define ParamLOG_UserFormula16Active                 ((bool)(knx.paramByte(LOG_UserFormula16Active) & LOG_UserFormula16ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula17                       (knx.paramData(LOG_UserFormula17))
+// Benutzerformel 17 aktiv
+#define ParamLOG_UserFormula17Active                 ((bool)(knx.paramByte(LOG_UserFormula17Active) & LOG_UserFormula17ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula18                       (knx.paramData(LOG_UserFormula18))
+// Benutzerformel 18 aktiv
+#define ParamLOG_UserFormula18Active                 ((bool)(knx.paramByte(LOG_UserFormula18Active) & LOG_UserFormula18ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula19                       (knx.paramData(LOG_UserFormula19))
+// Benutzerformel 19 aktiv
+#define ParamLOG_UserFormula19Active                 ((bool)(knx.paramByte(LOG_UserFormula19Active) & LOG_UserFormula19ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula20                       (knx.paramData(LOG_UserFormula20))
+// Benutzerformel 20 aktiv
+#define ParamLOG_UserFormula20Active                 ((bool)(knx.paramByte(LOG_UserFormula20Active) & LOG_UserFormula20ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula21                       (knx.paramData(LOG_UserFormula21))
+// Benutzerformel 21 aktiv
+#define ParamLOG_UserFormula21Active                 ((bool)(knx.paramByte(LOG_UserFormula21Active) & LOG_UserFormula21ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula22                       (knx.paramData(LOG_UserFormula22))
+// Benutzerformel 22 aktiv
+#define ParamLOG_UserFormula22Active                 ((bool)(knx.paramByte(LOG_UserFormula22Active) & LOG_UserFormula22ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula23                       (knx.paramData(LOG_UserFormula23))
+// Benutzerformel 23 aktiv
+#define ParamLOG_UserFormula23Active                 ((bool)(knx.paramByte(LOG_UserFormula23Active) & LOG_UserFormula23ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula24                       (knx.paramData(LOG_UserFormula24))
+// Benutzerformel 24 aktiv
+#define ParamLOG_UserFormula24Active                 ((bool)(knx.paramByte(LOG_UserFormula24Active) & LOG_UserFormula24ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula25                       (knx.paramData(LOG_UserFormula25))
+// Benutzerformel 25 aktiv
+#define ParamLOG_UserFormula25Active                 ((bool)(knx.paramByte(LOG_UserFormula25Active) & LOG_UserFormula25ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula26                       (knx.paramData(LOG_UserFormula26))
+// Benutzerformel 26 aktiv
+#define ParamLOG_UserFormula26Active                 ((bool)(knx.paramByte(LOG_UserFormula26Active) & LOG_UserFormula26ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula27                       (knx.paramData(LOG_UserFormula27))
+// Benutzerformel 27 aktiv
+#define ParamLOG_UserFormula27Active                 ((bool)(knx.paramByte(LOG_UserFormula27Active) & LOG_UserFormula27ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula28                       (knx.paramData(LOG_UserFormula28))
+// Benutzerformel 28 aktiv
+#define ParamLOG_UserFormula28Active                 ((bool)(knx.paramByte(LOG_UserFormula28Active) & LOG_UserFormula28ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula29                       (knx.paramData(LOG_UserFormula29))
+// Benutzerformel 29 aktiv
+#define ParamLOG_UserFormula29Active                 ((bool)(knx.paramByte(LOG_UserFormula29Active) & LOG_UserFormula29ActiveMask))
+// Formeldefinition
+#define ParamLOG_UserFormula30                       (knx.paramData(LOG_UserFormula30))
+// Benutzerformel 30 aktiv
+#define ParamLOG_UserFormula30Active                 ((bool)(knx.paramByte(LOG_UserFormula30Active) & LOG_UserFormula30ActiveMask))
 
 #define LOG_KoVacation 4
 #define LOG_KoHoliday1 5
@@ -1471,7 +2222,7 @@
 #define LOG_ChannelCount 99
 
 // Parameter per channel
-#define LOG_ParamBlockOffset 1573
+#define LOG_ParamBlockOffset 3993
 #define LOG_ParamBlockSize 84
 #define LOG_ParamCalcIndex(index) (index + LOG_ParamBlockOffset + _channelIndex * LOG_ParamBlockSize)
 
@@ -3145,7 +3896,7 @@
 #define BASE_KommentarModuleModuleParamSize 0
 #define BASE_KommentarModuleSubmodulesParamSize 0
 #define BASE_KommentarModuleParamSize 0
-#define BASE_KommentarModuleParamOffset 9889
+#define BASE_KommentarModuleParamOffset 12309
 #define BASE_KommentarModuleCalcIndex(index, m1) (index + BASE_KommentarModuleParamOffset + _channelIndex * BASE_KommentarModuleCount * BASE_KommentarModuleParamSize + m1 * BASE_KommentarModuleParamSize)
 
 

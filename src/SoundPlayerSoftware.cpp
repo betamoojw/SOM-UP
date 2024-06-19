@@ -4,22 +4,30 @@
 
 void SoundPlayerSoftware::buildToneSequence(uint8_t _channelIndex)
 {
-    if (!ParamTONE_ToneGeneratorMode) return;
+    constexpr uint16_t offset = SOM_TG2Mode - SOM_TG1Mode;
+    const uint16_t channelOffset = offset * _channelIndex;
+    const uint8_t mode = (knx.paramByte(SOM_TG1Mode + channelOffset) & SOM_TG1ModeMask) >> SOM_TG1ModeShift;
+
+    if (!mode) return;
 
     logDebugP("loadToneGenerator %i", _channelIndex);
     logIndentUp();
-    toneSequenceRepeats = ParamTONE_ToneGeneratorRepeats;
-    toneSequenceRepeatPause = ParamTONE_ToneGeneratorRepeatPause;
-    logDebugP("ParamTONE_ToneGeneratorRepeats %i", ParamTONE_ToneGeneratorRepeats);
-    logDebugP("ParamTONE_ToneGeneratorRepeatPause %i", ParamTONE_ToneGeneratorRepeatPause);
-    logDebugP("ParamTONE_ToneGeneratorMode %i", ParamTONE_ToneGeneratorMode);
+    toneSequenceRepeats = knx.paramByte(SOM_TG1Repeats + channelOffset);
+    toneSequenceRepeatPause = knx.paramByte(SOM_TG1RepeatPause + channelOffset);
+
+    logDebugP("ParamSOM_Index %i", _channelIndex);
+    logDebugP("ParamSOM_Offset %i", offset);
+    logDebugP("ParamSOM_ChannelOffset %i", channelOffset);
+    logDebugP("ParamSOM_TG1Mode %i", mode);
+    logDebugP("ParamSOM_TG1Repeats %i", toneSequenceRepeats);
+    logDebugP("ParamSOM_TG1RepeatPause %i", toneSequenceRepeatPause);
 
     uint16_t time = 0;
-    uint8_t max = (ParamTONE_ToneGeneratorMode == 1) ? 1 : 9;
+    uint8_t max = (mode == 1) ? 1 : 9;
     for (size_t i = 0; i < max; i++)
     {
-        uint8_t seqTime = knx.paramByte(TONE_ParamCalcIndex(TONE_ToneGeneratorDuration1 + i));
-        uint16_t seqFreq = knx.paramWord(TONE_ParamCalcIndex(TONE_ToneGeneratorFrequency1 + i));
+        uint8_t seqTime = knx.paramByte(SOM_TG1Duration1 + channelOffset + i);
+        uint16_t seqFreq = knx.paramWord(SOM_TG1Frequency1 + channelOffset + (i * 2));
         if (seqTime > 0)
         {
             time += seqTime;
@@ -54,7 +62,7 @@ void SoundPlayerSoftware::playNextPlay()
         _audioGenerator = new AudioGeneratorRTTTL();
     }
     // special handling for generated ton.
-    else if (_nextPlay.file >= 10000 && _nextPlay.file <= (TONE_ChannelCount + 10000))
+    else if (_nextPlay.file >= 10000 && _nextPlay.file <= (10 + 10000))
     {
         // Reset
         toneSequence.clear();
@@ -77,9 +85,12 @@ void SoundPlayerSoftware::playNextPlay()
     else
     {
         char name[11] = {};
-        if(findFile(_nextPlay.file, name)) {
+        if (findFile(_nextPlay.file, name))
+        {
             logInfoP("File %s found for sound %i", name, _nextPlay.file);
-        } else {
+        }
+        else
+        {
             logErrorP("No file found for sound %i", _nextPlay.file);
         }
         _audioSource = new AudioFileSourceLittleFS(name);
@@ -87,11 +98,10 @@ void SoundPlayerSoftware::playNextPlay()
 #ifdef OPENKNX_DEBUG
         // currentAudioGenerator->RegisterStatusCB(SoundPlayerSoftware::callbackStatus, (void *)"");
 #endif
-
     }
 
     set_sys_clock_khz(160000, true);
-    if(_audioGenerator != nullptr)
+    if (_audioGenerator != nullptr)
         _audioGenerator->begin(_audioSource, _audioOutput);
 }
 
@@ -105,7 +115,7 @@ void SoundPlayerSoftware::setup()
 #endif
 
     SoundPlayer::setup();
-    //powerOff(); // will turn on only during play back
+    // powerOff(); // will turn on only during play back
 
     _audioOutput = new AudioOutputSOM();
     _audioOutput->SetVolume(0);
@@ -208,19 +218,22 @@ bool SoundPlayerSoftware::findFile(uint16_t sound, char *name)
 
     // Try suffixes
     memcpy(name + prefixLen, ".RTT", 4);
-    if(LittleFS.exists(name)) {
+    if (LittleFS.exists(name))
+    {
         _audioGenerator = new AudioGeneratorRTTTL();
         return true;
     }
 
     memcpy(name + prefixLen, ".WAV", 4);
-    if(LittleFS.exists(name)) {
+    if (LittleFS.exists(name))
+    {
         _audioGenerator = new AudioGeneratorWAV();
         return true;
     }
 
     memcpy(name + prefixLen, ".MP3", 4);
-    if(LittleFS.exists(name)) {
+    if (LittleFS.exists(name))
+    {
         _audioGenerator = new AudioGeneratorMP3();
         return true;
     }

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" xmlns="http://knx.org/xml/project/20" CreatedBy="KNX MT" ToolVersion="5.1.255.16695">
+  <ManufacturerData>
+    <Manufacturer>
+      <ApplicationPrograms>
+        <ApplicationProgram>
+          <op:partParams name="TG">
+            <!-- this ist just for documentation reasons, as an example for the caller -->
+            <op:param name="%ParamOffset%" value="nn" />
+            <op:param name="%Seq2%" value="1" digits="2" />
+            <op:param name="%Seq1%" value="1" digits="1" />
+          </op:partParams>
+          <Static>
+            <Parameters>
+              <!-- ToneGenerator 1 --> 
+              <Parameter Id="%AID%_P-21%Seq2%000" Name="TG%Seq1%Name" ParameterType="%AID%_PT-Text40Byte" Text="Beschreibung" Value="" />
+              <Parameter Id="%AID%_P-21%Seq2%005" Name="TG%Seq1%Repeat" ParameterType="%AID%_PT-OnOffYesNo" Text="Wiederholungen" Value="0" />
+
+              <Union SizeInBit="32">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="%ParamOffset%" BitOffset="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%001" Name="TG%Seq1%Mode" Offset="0" BitOffset="0" ParameterType="%AID%_PT-TGMode" Text="Modus" Value="0" />
+
+                <Parameter Id="%AID%_UP-21%Seq2%002" Name="TG%Seq1%Repeats" Offset="1" BitOffset="0" ParameterType="%AID%_PT-SOMRepeats" Text="" Value="1" SuffixText="x" />
+                <Parameter Id="%AID%_UP-21%Seq2%004" Name="TG%Seq1%RepeatPause" Offset="2" BitOffset="0" ParameterType="%AID%_PT-TGDuration" Text="Pause zwischen der Wiederholung" Value="5" SuffixText="x 0,1s"/>
+              </Union>              
+              <Union SizeInBit="72">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="%ParamOffset+4%" BitOffset="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%101" Name="TG%Seq1%Duration1" Offset="0" BitOffset="0" ParameterType="%AID%_PT-TGDuration" Text="Dauer" Value="10" />
+                <Parameter Id="%AID%_UP-21%Seq2%102" Name="TG%Seq1%Duration2" Offset="1" BitOffset="0" ParameterType="%AID%_PT-TGDuration" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%103" Name="TG%Seq1%Duration3" Offset="2" BitOffset="0" ParameterType="%AID%_PT-TGDuration" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%104" Name="TG%Seq1%Duration4" Offset="3" BitOffset="0" ParameterType="%AID%_PT-TGDuration" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%105" Name="TG%Seq1%Duration5" Offset="4" BitOffset="0" ParameterType="%AID%_PT-TGDuration" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%106" Name="TG%Seq1%Duration6" Offset="5" BitOffset="0" ParameterType="%AID%_PT-TGDuration" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%107" Name="TG%Seq1%Duration7" Offset="6" BitOffset="0" ParameterType="%AID%_PT-TGDuration" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%108" Name="TG%Seq1%Duration8" Offset="7" BitOffset="0" ParameterType="%AID%_PT-TGDuration" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%109" Name="TG%Seq1%Duration9" Offset="8" BitOffset="0" ParameterType="%AID%_PT-TGDuration" Text="" Value="0" />
+              </Union>
+              <Union SizeInBit="144">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="%ParamOffset+13%" BitOffset="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%201" Name="TG%Seq1%Frequency1" Offset="0" BitOffset="0" ParameterType="%AID%_PT-TGFrequenz" Text="Frequenz" Value="4000" />
+                <Parameter Id="%AID%_UP-21%Seq2%202" Name="TG%Seq1%Frequency2" Offset="2" BitOffset="0" ParameterType="%AID%_PT-TGFrequenz" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%203" Name="TG%Seq1%Frequency3" Offset="4" BitOffset="0" ParameterType="%AID%_PT-TGFrequenz" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%204" Name="TG%Seq1%Frequency4" Offset="6" BitOffset="0" ParameterType="%AID%_PT-TGFrequenz" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%205" Name="TG%Seq1%Frequency5" Offset="8" BitOffset="0" ParameterType="%AID%_PT-TGFrequenz" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%206" Name="TG%Seq1%Frequency6" Offset="10" BitOffset="0" ParameterType="%AID%_PT-TGFrequenz" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%207" Name="TG%Seq1%Frequency7" Offset="12" BitOffset="0" ParameterType="%AID%_PT-TGFrequenz" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%208" Name="TG%Seq1%Frequency8" Offset="14" BitOffset="0" ParameterType="%AID%_PT-TGFrequenz" Text="" Value="0" />
+                <Parameter Id="%AID%_UP-21%Seq2%209" Name="TG%Seq1%Frequency9" Offset="16" BitOffset="0" ParameterType="%AID%_PT-TGFrequenz" Text="" Value="0" />
+              </Union>
+            </Parameters>
+            <ParameterRefs>
+              <ParameterRef Id="%AID%_P-21%Seq2%000_R-21%Seq2%00001" RefId="%AID%_P-21%Seq2%000" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%001_R-21%Seq2%00101" RefId="%AID%_UP-21%Seq2%001" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%002_R-21%Seq2%00201" RefId="%AID%_UP-21%Seq2%002" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%004_R-21%Seq2%00401" RefId="%AID%_UP-21%Seq2%004" />
+              <ParameterRef Id="%AID%_P-21%Seq2%005_R-21%Seq2%00501" RefId="%AID%_P-21%Seq2%005" />
+              
+              <ParameterRef Id="%AID%_UP-21%Seq2%101_R-21%Seq2%10101" RefId="%AID%_UP-21%Seq2%101" SuffixText="x 0,1s" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%102_R-21%Seq2%10201" RefId="%AID%_UP-21%Seq2%102" SuffixText="x 0,1s" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%103_R-21%Seq2%10301" RefId="%AID%_UP-21%Seq2%103" SuffixText="x 0,1s" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%104_R-21%Seq2%10401" RefId="%AID%_UP-21%Seq2%104" SuffixText="x 0,1s" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%105_R-21%Seq2%10501" RefId="%AID%_UP-21%Seq2%105" SuffixText="x 0,1s" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%106_R-21%Seq2%10601" RefId="%AID%_UP-21%Seq2%106" SuffixText="x 0,1s" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%107_R-21%Seq2%10701" RefId="%AID%_UP-21%Seq2%107" SuffixText="x 0,1s" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%108_R-21%Seq2%10801" RefId="%AID%_UP-21%Seq2%108" SuffixText="x 0,1s" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%109_R-21%Seq2%10901" RefId="%AID%_UP-21%Seq2%109" SuffixText="x 0,1s" />
+              
+              <ParameterRef Id="%AID%_UP-21%Seq2%201_R-21%Seq2%20101" RefId="%AID%_UP-21%Seq2%201" SuffixText="Hz" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%202_R-21%Seq2%20201" RefId="%AID%_UP-21%Seq2%202" SuffixText="Hz" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%203_R-21%Seq2%20301" RefId="%AID%_UP-21%Seq2%203" SuffixText="Hz" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%204_R-21%Seq2%20401" RefId="%AID%_UP-21%Seq2%204" SuffixText="Hz" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%205_R-21%Seq2%20501" RefId="%AID%_UP-21%Seq2%205" SuffixText="Hz" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%206_R-21%Seq2%20601" RefId="%AID%_UP-21%Seq2%206" SuffixText="Hz" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%207_R-21%Seq2%20701" RefId="%AID%_UP-21%Seq2%207" SuffixText="Hz" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%208_R-21%Seq2%20801" RefId="%AID%_UP-21%Seq2%208" SuffixText="Hz" />
+              <ParameterRef Id="%AID%_UP-21%Seq2%209_R-21%Seq2%20901" RefId="%AID%_UP-21%Seq2%209" SuffixText="Hz"/>
+            </ParameterRefs>
+          </Static>
+          <Dynamic>
+            <ChannelIndependentBlock> 
+              <!-- START INCLUDE HERE -->
+              <ParameterBlock Id="%AID%_PB-nnn" Name="Sequence%Seq1%" Text="Sequenz %Seq1%: {{0: ...}}" TextParameterRefId="%AID%_P-21%Seq2%000_R-21%Seq2%00001" Icon="format-list-bulleted">
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="Sequenz %Seq1%" UIHint="Headline" />
+                <!-- Name -->
+                <ParameterRefRef RefId="%AID%_P-21%Seq2%000_R-21%Seq2%00001" IndentLevel="1" HelpContext="BASE-ChannelName" />
+                <!-- Mode -->
+                <ParameterRefRef RefId="%AID%_UP-21%Seq2%001_R-21%Seq2%00101" IndentLevel="1" HelpContext="SOM-SequenceMode"/>
+                <choose ParamRefId="%AID%_UP-21%Seq2%001_R-21%Seq2%00101">
+                  <when test="1">
+                    <ParameterRefRef RefId="%AID%_UP-21%Seq2%101_R-21%Seq2%10101" IndentLevel="1" />
+                    <ParameterRefRef RefId="%AID%_UP-21%Seq2%201_R-21%Seq2%20101" IndentLevel="1" />
+                  </when>
+                  <when test="2">
+                    <!-- Grid -->
+                    <ParameterBlock Id="%AID%_PB-nnn" Name="Table1Sequence" Text="#" Inline="true" Layout="Grid" HelpContext="SOM-SequenceMode">
+                      <Rows>
+                        <Row Id="%AID%_PB-nnn_R-1" Name="Row1" />
+                        <Row Id="%AID%_PB-nnn_R-2" Name="Row2" />
+                        <Row Id="%AID%_PB-nnn_R-3" Name="Row3" />
+                        <Row Id="%AID%_PB-nnn_R-4" Name="Row4" />
+                        <Row Id="%AID%_PB-nnn_R-5" Name="Row5" />
+                        <Row Id="%AID%_PB-nnn_R-6" Name="Row6" />
+                        <Row Id="%AID%_PB-nnn_R-7" Name="Row7" />
+                        <Row Id="%AID%_PB-nnn_R-8" Name="Row8" />
+                        <Row Id="%AID%_PB-nnn_R-9" Name="Row9" />
+                        <Row Id="%AID%_PB-nnn_R-10" Name="Row10" />
+                        <Row Id="%AID%_PB-nnn_R-11" Name="Row11" />
+                        <Row Id="%AID%_PB-nnn_R-12" Name="Row12" />
+                      </Rows>
+                      <Columns>
+                        <Column Id="%AID%_PB-nnn_C-1" Name="Col1" Width="46%" />
+                        <Column Id="%AID%_PB-nnn_C-2" Name="Col2" Width="6%" />
+                        <Column Id="%AID%_PB-nnn_C-3" Name="Col3" Width="20%" />
+                        <Column Id="%AID%_PB-nnn_C-4" Name="Col4" Width="3%" />
+                        <Column Id="%AID%_PB-nnn_C-5" Name="Col5" Width="20%" />
+                      </Columns>
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Dauer"    Cell="2,3" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="Frequenz" Cell="2,5" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="1." Cell="3,2" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="2." Cell="4,2" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="3." Cell="5,2" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="4." Cell="6,2" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="5." Cell="7,2" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="6." Cell="8,2" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="7." Cell="9,2" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="8." Cell="10,2" />
+                      <ParameterSeparator Id="%AID%_PS-nnn" Text="9." Cell="11,2" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%101_R-21%Seq2%10101" Cell="3,3" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%102_R-21%Seq2%10201" Cell="4,3" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%103_R-21%Seq2%10301" Cell="5,3" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%104_R-21%Seq2%10401" Cell="6,3" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%105_R-21%Seq2%10501" Cell="7,3" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%106_R-21%Seq2%10601" Cell="8,3" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%107_R-21%Seq2%10701" Cell="9,3" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%108_R-21%Seq2%10801" Cell="10,3" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%109_R-21%Seq2%10901" Cell="11,3" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%201_R-21%Seq2%20101" Cell="3,5" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%202_R-21%Seq2%20201" Cell="4,5" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%203_R-21%Seq2%20301" Cell="5,5" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%204_R-21%Seq2%20401" Cell="6,5" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%205_R-21%Seq2%20501" Cell="7,5" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%206_R-21%Seq2%20601" Cell="8,5" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%207_R-21%Seq2%20701" Cell="9,5" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%208_R-21%Seq2%20801" Cell="10,5" />
+                      <ParameterRefRef RefId="%AID%_UP-21%Seq2%209_R-21%Seq2%20901" Cell="11,5" />
+                    </ParameterBlock>
+                  </when>
+                  <when test=">0">
+                    <!-- Repeat -->
+                    <ParameterRefRef RefId="%AID%_P-21%Seq2%005_R-21%Seq2%00501" IndentLevel="1" HelpContext="SOM-SequenceRepeat" />
+                    <choose ParamRefId="%AID%_P-21%Seq2%005_R-21%Seq2%00501">
+                      <when test="1">
+                        <ParameterRefRef RefId="%AID%_UP-21%Seq2%002_R-21%Seq2%00201" HelpContext="SOM-SequenceRepeat" />
+                        <ParameterRefRef RefId="%AID%_UP-21%Seq2%004_R-21%Seq2%00401" IndentLevel="1" HelpContext="SOM-SequenceRepeat" />
+                      </when>
+                    </choose>
+                  </when>
+                </choose>
+              </ParameterBlock>
+            </ChannelIndependentBlock>
+          </Dynamic>
+        </ApplicationProgram>
+      </ApplicationPrograms>
+    </Manufacturer>
+  </ManufacturerData>
+</KNX>

@@ -25,7 +25,7 @@
     template="SoundModule.templ.xml"
     NumChannels="10" KoOffset="50" />
 
-    <op:define prefix="TONE" ModuleType="21"
+  <op:define prefix="TONE" ModuleType="21" configTransferName="Tongenerator"
     share="ToneGenerator.share.xml"
     template="ToneGenerator.templ.xml"
     NumChannels="9" />
