@@ -1,5 +1,4 @@
-﻿### Doc
-
+﻿### Dokumentation
 
 Eine vollständige Applikationsbeschreibung ist unter folgendem Link verfügbar: https://github.com/openknx/SOM-UP/blob/v1/doc/Applikationsbeschreibung-Soundmodul.md
 
@@ -9,4 +8,24 @@ Der neue Player hingegangen, ist eigentlich kein richtiger Player, sondern eher 
 
 Alternativ können die Dateien auch per USB übertragen werden. Hierzu simuliert das SOM-UP einen virtuellen USB-Stick mit einem Eingangsordner. Nach dem Auswerfen werden die Dateien in diesem Ordner auf den internen Speicher verschoben. Dieser Modus kann per Doppelklick auf die PROG-Taste gestartet, wie auch beendet werden (Alternativ über das Betriebssystem auswerfen).
 Hinweis: Da der virtuelle Speicher auf ca. 1MB limitiert ist, kann es nötig sein, die Daten in mehreren Tranchen zu kopieren. Anhand des Blinkens, kann geprüft werden, ob der Kopiervorgang abgeschlossen wurde und man erneut USB-Modus starten kann.
+
+### Features
+
+- Variante: MP3-Player (DY-SV17F)
+	- 4MB großer Speicher, welcher per USB befüllt wird. (Wird als USB-Stick angesprochen)
+	- Onboard 5W Class D Verstärker (ca 3~5W an 4Ω Lautsprecher)
+- Variante: Software-Player (I2S)
+    - Verwendung des internen Flashspeichers ca 10MB frei zur Nutzung
+    - Tongenerator bis 9 Tonsequenzen
+    - Support MP3-, WAV-, RTT-Dateien
+- Grundlautstärke (auch Tag/Nachtabhängig)
+- Globale Sperrmöglichkeit
+- 20 konfigurierbare Szenen
+- 5 stufiges Prioritätensystem
+- 10 Auslöser (1bit-Trigger)
+	- Sperrmöglichkeit (z.B. Klingelsperre)
+	- Abweichende Laustärke (auch Tag/Nachtabhängig)
+	- Wiederholgen (z.B. für Sirene)
+	- Maximale Abspieldauer
+	- Retrigger-Schutz
 
