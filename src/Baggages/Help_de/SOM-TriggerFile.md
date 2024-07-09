@@ -1,7 +1,7 @@
-### Sounddatei
+﻿### Sounddatei
 
 Um die Sounddateien abspielen zu können, müssen sie im 5-stelligen Format 00001.MP3 (Großbuchstaben) und im MP3-Format gespeichert sein.
-Dabei ist aber nur 00001-09999 erlaubt, da die >10000 reserviert sind für spätere generierte Töne. Wenn ein SW-Player (I2S) verbaut wurde, sind auch Dateien im WAV-Format erlaubt.
+Dabei ist aber nur 00001-09999 erlaubt, da die >10000 reserviert sind. Wenn ein SW-Player (I2S) verbaut wurde, kann der Tongenerator genutzt und über 10001 bis 10009 angesprochen werden. Außerdem können dann auch WAV und RTT Dateien abgespielt werden.
 
 * Tipp 1: Um den Überblick zu behalten, kann eine zusätzliche Datei mit der gleichen Nummer angelegt werden, beispielsweise „00001 Klingel 1.txt“ oder „00002 Innensirene.txt“.
 * Tipp 2: Um optimale Ergebnisse zu erzielen, können Sie die Sounddatei vorher in Audacity (Kostenfrei) bearbeiten.

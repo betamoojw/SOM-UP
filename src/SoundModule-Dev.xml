@@ -3,11 +3,12 @@
 <KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
   <op:config name="%BTN_NumChannelsDefault%" value="5" />
   <op:config name="%LOG_NumChannelsDefault%" value="5" />
+  <op:config name="%SOM_NumChannelsDefault%" value="3" />
   <op:ETS
     OpenKnxId="0xA2"
     ApplicationNumber="0x29"
-    ApplicationVersion="68"
-    ReplacesVersions="67 66 65 64 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1"
+    ApplicationVersion="81"
+    ReplacesVersions="80 79 78 77 76 75 74 73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1"
     ApplicationRevision="0"
     ProductName="Soundmodul"
     BusCurrent="30"
@@ -17,7 +18,7 @@
 
   <op:define prefix="BASE" ModuleType="10"
     share="../lib/OGM-Common/src/Common.share.xml">
-    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="1.1" /> 
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="1.2" /> 
   </op:define>
 
   <op:define prefix="UCT" ModuleType="19"
@@ -34,7 +35,7 @@
     share="../lib/OFM-BinaryInput/src/BinaryInputChannel.share.xml"
     template="../lib/OFM-BinaryInput/src/BinaryInputChannel.templ.xml"
     NumChannels="4" KoOffset="41" >
-    <op:verify File="../lib/OFM-BinaryInput/library.json" ModuleVersion="0.1" /> 
+    <op:verify File="../lib/OFM-BinaryInput/library.json" ModuleVersion="0.2" /> 
   </op:define>
 
   <op:define prefix="BTN" ModuleType="30"
@@ -48,7 +49,7 @@
     share="../lib/OFM-LogicModule/src/Logikmodul.share.xml"
     template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
     NumChannels="99" KoOffset="100">
-    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.2" /> 
+    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.3" /> 
   </op:define>
 
   <generate />

@@ -1,8 +1,8 @@
 #pragma once
 #include "OpenKNXHardware.h"
 
-#define BINARY_INPUT_PULSE_PAUSE_TIME 5  // MS
-#define BINARY_INPUT_PULSE_WAIT_TIME 250 // US
+#define OPENKNX_BI_PULSE_PAUSE_TIME 5  // MS
+#define OPENKNX_BI_PULSE_WAIT_TIME 250 // US
 
 #ifdef BOARD_MASIFI_SENSOR_BREAKOUT
     // #define OPENKNX_RECOVERY_ON LOW
@@ -19,16 +19,15 @@
     #define PLAYER_UART_TX_PIN 8
     #define PLAYER_I2S_BCLK_PIN 8
     #define PLAYER_I2S_DATA_PIN 20
-    #define BINARY_INPUT_PULSE_PIN 5
-    #define BINARY_INPUT_A_PIN 2
-    #define BINARY_INPUT_B_PIN 4
-    #define BINARY_INPUT_C_PIN 6
-    #define BINARY_INPUT_D_PIN 7
     #define HARDWARE_NAME "MASIFI-SENSOR-BREAKOUT"
     #define SmartMF_HardwareVariant_PIN 26
     #define SmartMF_HardwareRevision_PIN1 10
     #define SmartMF_HardwareRevision_PIN2 11
     #define SmartMF_HardwareRevision_PIN3 12
+
+    #define OPENKNX_BI_GPIO_PINS 2, 4, 6, 7
+    #define OPENKNX_BI_GPIO_COUNT 4
+    #define OPENKNX_BI_PULSE 5
 #endif
 
 #ifdef BOARD_SOM_UP
@@ -46,14 +45,13 @@
     #define PLAYER_I2S_BCLK_PIN 8
     #define PLAYER_I2S_DATA_PIN 20
     #define PLAYER_POWER_PIN 3
-    #define BINARY_INPUT_PULSE_PIN 14
-    #define BINARY_INPUT_A_PIN 4
-    #define BINARY_INPUT_B_PIN 5
-    #define BINARY_INPUT_C_PIN 19
-    #define BINARY_INPUT_D_PIN 18
     #define HARDWARE_NAME "SOM-UP"
 
     #define SmartMF_HardwareRevision_PIN1 10
     #define SmartMF_HardwareRevision_PIN2 11
     #define SmartMF_HardwareRevision_PIN3 12
+
+    #define OPENKNX_BI_GPIO_PINS 4, 5, 19, 18
+    #define OPENKNX_BI_GPIO_COUNT 4
+    #define OPENKNX_BI_PULSE 14
 #endif

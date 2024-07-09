@@ -12,6 +12,9 @@
           </op:part>
           <Static>
             <ParameterTypes>
+              <ParameterType Id="%AID%_PT-SOMNumChannels" Name="SOMNumChannels">
+                <TypeNumber SizeInBit="8" Type="unsignedInt" minInclusive="1" maxInclusive="%N%" />
+              </ParameterType>
               <ParameterType Id="%AID%_PT-SOMRepeats" Name="SOMRepeats">
                 <TypeNumber SizeInBit="8" Type="unsignedInt" minInclusive="1" maxInclusive="255" />
               </ParameterType>
@@ -118,6 +121,7 @@
               </ParameterType>
             </ParameterTypes>
             <Parameters>
+              <Parameter Id="%AID%_P-%TT%00000" Name="VisibleChannels" ParameterType="%AID%_PT-SOMNumChannels" Text="Verfügbare Auslöser" Value="%SOM_NumChannelsDefault%" SuffixText=" von %N%" />
               <Parameter Id="%AID%_P-%TT%00001" Name="PlayerVariant" ParameterType="%AID%_PT-PlayerVariant" Text="Player-Variante" Value="0" />
               <Union SizeInBit="32">
                 <Memory CodeSegment="%AID%_RS-04-00000" Offset="1" BitOffset="0" />
@@ -214,10 +218,11 @@
               <op:usePart name="TG" xpath="//Static/Parameters/*" />
             </Parameters>
             <ParameterRefs>
+              <ParameterRef Id="%AID%_P-%TT%00000_R-%TT%0000001" RefId="%AID%_P-%TT%00000" />
               <ParameterRef Id="%AID%_P-%TT%00001_R-%TT%0000101" RefId="%AID%_P-%TT%00001" />
-              <ParameterRef Id="%AID%_UP-%TT%00002_R-%TT%0000201" RefId="%AID%_UP-%TT%00002" Text="Lautsärke" />
-              <ParameterRef Id="%AID%_UP-%TT%00002_R-%TT%0000202" RefId="%AID%_UP-%TT%00002" Text="Lautsärke (Tag)" />
-              <ParameterRef Id="%AID%_UP-%TT%00003_R-%TT%0000301" RefId="%AID%_UP-%TT%00003" Text="Lautsärke (Nacht)" />
+              <ParameterRef Id="%AID%_UP-%TT%00002_R-%TT%0000201" RefId="%AID%_UP-%TT%00002" Text="Lautstärke" />
+              <ParameterRef Id="%AID%_UP-%TT%00002_R-%TT%0000202" RefId="%AID%_UP-%TT%00002" Text="Lautstärke (Tag)" />
+              <ParameterRef Id="%AID%_UP-%TT%00003_R-%TT%0000301" RefId="%AID%_UP-%TT%00003" Text="Lautstärke (Nacht)" />
               <ParameterRef Id="%AID%_UP-%TT%00006_R-%TT%0000601" RefId="%AID%_UP-%TT%00006" />
               <ParameterRef Id="%AID%_UP-%TT%00007_R-%TT%0000701" RefId="%AID%_UP-%TT%00007" />
               <ParameterRef Id="%AID%_UP-%TT%00008_R-%TT%0000801" RefId="%AID%_UP-%TT%00008" />
@@ -332,19 +337,29 @@
             </Extension>
           </Static>
           <Dynamic>
-            <Channel Id="%AID%_CH-%PREFIX%" Number="%PREFIX%" Name="Main" Text="Tonausgabe" Icon="speaker" HelpContext="Empty">
+            <Channel Id="%AID%_CH-%PREFIX%" Number="%PREFIX%" Name="Main" Text="Tonausgabe" Icon="speaker" HelpContext="%PREFIX%-Doc">
 
               <!-- Allgemein -->
-              <ParameterBlock Id="%AID%_PB-nnn" Name="Basic" Text="Allgemein" Icon="cog-outline" HelpContext="Empty" >
+              <ParameterBlock Id="%AID%_PB-nnn" Name="Basic" Text="Allgemein" Icon="cog-outline" HelpContext="%PREFIX%-Doc" >
                 
                 <ParameterBlock Id="%AID%_PB-nnn" Name="Central" Text="Zentral" Inline="true" ShowInComObjectTree="true">
 
-                  <ParameterSeparator Id="%AID%_PS-nnn" Text="Basiseinstellung" UIHint="Headline" />
+                  <ParameterSeparator Id="%AID%_PS-nnn" Text="Soundmodul" UIHint="Headline" />
+                  <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
 
+                  <ParameterSeparator Id="%AID%_PS-nnn" Text="Auslöserauswahl" UIHint="Headline" />
+                  <ParameterRefRef RefId="%AID%_P-%TT%00000_R-%TT%0000001" HelpContext="SOM-AvailableTriggers" IndentLevel="1" />
+                  <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
+
+                  <ParameterSeparator Id="%AID%_PS-nnn" Text="Hardware" UIHint="Headline" />
                   <!-- Player-Variante -->
-                  <ParameterRefRef RefId="%AID%_P-%TT%00001_R-%TT%0000101" Icon="play-box-outline" HelpContext="SOM-PlayerVariant" /> 
+                  <ParameterRefRef RefId="%AID%_P-%TT%00001_R-%TT%0000101" IndentLevel="1" HelpContext="%PREFIX%-PlayerVariant" /> 
+                  <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
+
+                  <ParameterSeparator Id="%AID%_PS-nnn" Text="Zentral" UIHint="Headline" />
+
                   <!-- Tag/Nacht -->
-                  <ParameterRefRef RefId="%AID%_UP-%TT%00007_R-%TT%0000701" Icon="theme-light-dark" HelpContext="SOM-DayNight" /> 
+                  <ParameterRefRef RefId="%AID%_UP-%TT%00007_R-%TT%0000701" IndentLevel="1" HelpContext="%PREFIX%-DayNight" /> 
                   <choose ParamRefId="%AID%_UP-%TT%00007_R-%TT%0000701">
                     <when test="1">
                       <ComObjectRefRef RefId="%AID%_O-%TT%00027_R-%TT%0002701" />
@@ -357,16 +372,16 @@
                   <!-- Volume -->
                   <choose ParamRefId="%AID%_UP-%TT%00007_R-%TT%0000701">
                     <when test="0">
-                      <ParameterRefRef RefId="%AID%_UP-%TT%00002_R-%TT%0000201" Icon="volume-high" HelpContext="SOM-Volume" />
+                      <ParameterRefRef RefId="%AID%_UP-%TT%00002_R-%TT%0000201" IndentLevel="1" HelpContext="%PREFIX%-Volume" />
                     </when>
                     <when test=">0">
-                      <ParameterRefRef RefId="%AID%_UP-%TT%00002_R-%TT%0000202" Icon="volume-high" HelpContext="SOM-Volume" />
-                      <ParameterRefRef RefId="%AID%_UP-%TT%00003_R-%TT%0000301" Icon="volume-medium" HelpContext="SOM-Volume" />
+                      <ParameterRefRef RefId="%AID%_UP-%TT%00002_R-%TT%0000202" IndentLevel="1" HelpContext="%PREFIX%-Volume" />
+                      <ParameterRefRef RefId="%AID%_UP-%TT%00003_R-%TT%0000301" IndentLevel="1" HelpContext="%PREFIX%-Volume" />
                     </when>
                   </choose>
 
                   <!-- Lock -->
-                  <ParameterRefRef RefId="%AID%_UP-%TT%00009_R-%TT%0000901" Icon="lock-outline" HelpContext="SOM-GlobalLock" />
+                  <ParameterRefRef RefId="%AID%_UP-%TT%00009_R-%TT%0000901" IndentLevel="1" HelpContext="%PREFIX%-GlobalLock" />
                   <choose ParamRefId="%AID%_UP-%TT%00009_R-%TT%0000901">
                     <when test="1">
                       <ComObjectRefRef RefId="%AID%_O-%TT%00029_R-%TT%0002901" />
@@ -376,13 +391,10 @@
                     </when>
                   </choose>
                   <!-- Szenensteuerung -->
-                  <ParameterRefRef RefId="%AID%_UP-%TT%00006_R-%TT%0000601" Icon="list-box-outline" HelpContext="SOM-Scenes" />
+                  <ParameterRefRef RefId="%AID%_UP-%TT%00006_R-%TT%0000601" IndentLevel="1" HelpContext="%PREFIX%-Scenes" />
 
-                  <!-- Erweiterte Steuerung -->
-                  <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
-                  <ParameterSeparator Id="%AID%_PS-nnn" Text="Externe Logik" UIHint="Headline" />
                   <!-- Externe Steuerung -->
-                  <ParameterRefRef RefId="%AID%_UP-%TT%00008_R-%TT%0000801" Icon="remote-desktop" HelpContext="SOM-External" />
+                  <ParameterRefRef RefId="%AID%_UP-%TT%00008_R-%TT%0000801" IndentLevel="1" HelpContext="%PREFIX%-External" />
 
                   <ComObjectRefRef RefId="%AID%_O-%TT%00021_R-%TT%0002101" />
                   <ComObjectRefRef RefId="%AID%_O-%TT%00022_R-%TT%0002201" />
@@ -393,13 +405,6 @@
                   </choose>
                 
                 </ParameterBlock>
-              </ParameterBlock>
-
-              <!-- Doku -->
-              <ParameterBlock Id="%AID%_PB-nnn" Name="Documentation" Text="Dokumentation" Icon="information-outline" HelpContext="SOM-Doc">
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="Dokumentation" UIHint="Headline" />
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="Unten im Hilfefenster findest du eine allgemeine Dokumentation zum SOM-UP." />
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="Darüber hinaus sind so weit alle Parameter mit eigenen Hilfetexten versehen, um so die Einrichtung so einfach wie möglich zu gestalten." />
               </ParameterBlock>
 
               <!-- Szenen -->
@@ -723,7 +728,7 @@
               <!-- Sequenzen -->
               <choose ParamRefId="%AID%_P-2000001_R-200000101">
                 <when test="0">
-                  <ParameterBlock Id="%AID%_PB-nnn" Name="ToneGenerator" Text="Tongenerator" Icon="waveform" HelpContext="Empty">
+                  <ParameterBlock Id="%AID%_PB-nnn" Name="ToneGenerator" Text="Tongenerator" Icon="waveform" HelpContext="%PREFIX%-Sequences">
                     <ParameterSeparator Id="%AID%_PS-nnn" Text="Tongenerator" UIHint="Headline" />
                     <ParameterSeparator Id="%AID%_PS-nnn" Text="Die Sequenzen können über die Pseudo-Datei 10001 bis 10009 angesprochen werden." />
                     <op:usePart name="TG" xpath="//Dynamic/ChannelIndependentBlock/ParameterBlock" />
@@ -743,6 +748,17 @@
               
               <!-- Auslöser -->
               <op:include href="SoundModule.templ.xml" xpath="//Dynamic/ChannelIndependentBlock/*" type="template" prefix="SOM" IsInner="true" />
+
+              <!-- offer more button -->
+              <choose ParamRefId="%AID%_P-%TT%00000_R-%TT%0000001">
+                <when test="&lt;%N%">
+                  <ParameterBlock Id="%AID%_PB-nnn" Text="(mehr)" Icon="dots-horizontal" HelpContext="Empty">
+                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Kanalauswahl" UIHint="Headline" />
+                    <ParameterRefRef RefId="%AID%_P-%TT%00000_R-%TT%0000001" HelpContext="SOM-AvailableTriggers" IndentLevel="1" />
+                  </ParameterBlock>
+                </when>
+              </choose>
+
             </Channel>
           </Dynamic>
         </ApplicationProgram>

@@ -109,6 +109,22 @@
             ],
             "problemMatcher": [],
             "group": "test"
+        },
+        {
+            "label": "OpenKNXproducer Documentation",
+            "type": "shell",
+            "command": "~/bin/OpenKNXproducer.exe",
+            "args": [
+                "baggages",
+                "--DocFileName",
+                "doc/Applikationsbeschreibung-Soundmodul.md",
+                "--BaggagesDir",
+                "src/Baggages/Help_de",
+                "--Prefix",
+                "SOM"
+            ],
+            "problemMatcher": [],
+            "group": "test"
         }
     ]
 }

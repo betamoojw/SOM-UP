@@ -1,8 +1,8 @@
 #include "FileTransferModule.h"
+#include "GpioBinaryInputModule.h"
 #include "Logic.h"
 #include "OpenKNX.h"
 #include "SmartMF.h"
-#include "SoundBinaryInputModule.h"
 #include "SoundModule.h"
 #include "UsbExchangeModule.h"
 #include "VirtualButtonModule.h"
@@ -14,7 +14,7 @@ void setup()
     smartmf.init();
     openknx.addModule(1, openknxLogic);
     openknx.addModule(2, openknxSoundModule);
-    openknx.addModule(4, openknxSoundBinaryInputModule);
+    openknx.addModule(4, openknxGpioBinaryInputModule);
     openknx.addModule(3, openknxVirtualButtonModule);
     openknx.addModule(8, openknxUsbExchangeModule);
     openknx.addModule(9, openknxFileTransferModule);
