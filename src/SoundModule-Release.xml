@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
-  <op:config name="%BTN_NumChannelsDefault%" value="20" />
-  <op:config name="%LOG_NumChannelsDefault%" value="99" />
+  <op:config name="%BTN_NumChannelsDefault%" value="3" />
+  <op:config name="%LOG_NumChannelsDefault%" value="3" />
+  <op:config name="%SOM_NumChannelsDefault%" value="3" />
   <op:ETS
     OpenKnxId="0xA2"
     ApplicationNumber="0x28"
-    ApplicationVersion="11"
-    ReplacesVersions="10 9 8 7 6 5 4 3 2 1"
+    ApplicationVersion="1.0"
+    ReplacesVersions="0.12"
     ApplicationRevision="0"
     ProductName="Soundmodul"
     BusCurrent="30"
-    BuildSuffix="-Beta"
-    BuildSuffixText=" (Beta)"
+    BuildSuffix=""
+    BuildSuffixText=""
     OrderNumber="SOM-UP" />
 
   <op:define prefix="BASE" ModuleType="10"
@@ -20,15 +21,15 @@
     <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="1.2" /> 
   </op:define>
 
+  <op:define prefix="UCT" ModuleType="19"
+    share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml">
+    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="0.1" />
+  </op:define>
+
   <op:define prefix="SOM" ModuleType="20"
     share="SoundModule.share.xml"
     template="SoundModule.templ.xml"
     NumChannels="10" KoOffset="50" />
-
-  <op:define prefix="TONE" ModuleType="21" configTransferName="Tongenerator"
-    share="ToneGenerator.share.xml"
-    template="ToneGenerator.templ.xml"
-    NumChannels="9" />
 
   <op:define prefix="BI" ModuleType="40"
     share="../lib/OFM-BinaryInput/src/BinaryInputChannel.share.xml"

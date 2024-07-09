@@ -91,11 +91,11 @@
             "problemMatcher": []
         },
         {
-            "label": "Build-Beta",
+            "label": "Build",
             "type": "shell",
             "command": "scripts/Build-Release.ps1", 
             "args": [
-                "Beta"
+                "Release"
             ],
             "problemMatcher": [],
             "group": "test"

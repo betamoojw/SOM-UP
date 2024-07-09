@@ -9,8 +9,8 @@
                                          (time & 0x3FFF) * 3600000 ) : 0 )
                                              
 #define MAIN_OpenKnxId 0xA2
-#define MAIN_ApplicationNumber 41
-#define MAIN_ApplicationVersion 81
+#define MAIN_ApplicationNumber 40
+#define MAIN_ApplicationVersion 16
 #define MAIN_ParameterSize 12889
 #define MAIN_MaxKoNumber 639
 #define MAIN_OrderNumber "SOM-UP"
@@ -3894,7 +3894,7 @@
 
 // Header generation for Module 'BASE_KommentarModule'
 
-#define BASE_KommentarModuleCount 99
+#define BASE_KommentarModuleCount 0
 #define BASE_KommentarModuleModuleParamSize 0
 #define BASE_KommentarModuleSubmodulesParamSize 0
 #define BASE_KommentarModuleParamSize 0
